@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alessio Melia – Filmmaker & Camera Department</title>
+<meta name="description" content="Alessio Melia: filmmaker, camera operator e reparto camera (1AC, 2AC). Milano, Italia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0e;--panel:#161617;--line:#2a2a2c;--text:#ececea;--mute:#8d8d90;--acc:#ff6a13;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;color-scheme:dark}
+html{scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.55 Archivo,system-ui,sans-serif;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit;text-decoration:none}
+.d{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:.01em}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0)) 5vw 14px;background:rgba(13,13,14,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{width:42px;height:42px;border:2px solid var(--text);display:grid;place-items:center;font-size:24px;position:relative;clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%);transition:.25s}
+.logo:after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;background:var(--acc)}
+.logo:hover{background:var(--text);color:var(--bg)}
+.rt{display:flex;align-items:center;gap:26px}
+nav{display:flex;gap:26px;font-size:14px;font-weight:500}
+nav a{color:var(--mute);padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover,nav a.on{color:var(--text);border-color:var(--acc)}
+.lg{display:flex}
+.lg button{font:500 12px var(--mono);letter-spacing:.1em;background:none;color:var(--mute);border:1px solid var(--line);padding:6px 9px;cursor:pointer}
+.lg button+button{border-left:0}
+.lg button[aria-pressed=true]{color:#111;background:var(--text);border-color:var(--text)}
+main,footer{position:relative;z-index:1}
+.hero{min-height:calc(100svh - 70px);display:flex;flex-direction:column;padding:6vh 5vw 5vh}
+.ttl{position:relative;width:max-content;max-width:100%}
+.ttl .d{margin:0;font-size:clamp(64px,17vw,250px)}
+.ttl .d span{display:block}
+.ttl .d .b{-webkit-text-stroke:2px var(--text);color:transparent}
+.ttl .blur{position:absolute;inset:0;filter:blur(var(--b,12px));opacity:.6;pointer-events:none}
+.ttl .blur .b{-webkit-text-stroke-width:5px}
+.ttl .sharp{position:relative;-webkit-mask-image:radial-gradient(circle var(--r,180px) at var(--mx,30%) var(--my,50%),#000 55%,transparent 100%);mask-image:radial-gradient(circle var(--r,180px) at var(--mx,30%) var(--my,50%),#000 55%,transparent 100%)}
+.hero .lead{max-width:46ch;margin:26px 0 0;font-size:clamp(17px,2vw,21px)}
+.hero .foot{margin-top:auto;padding-top:48px;display:flex;justify-content:space-between;gap:20px;font:400 13px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.foot .sc{display:flex;align-items:center;gap:14px}
+.foot .sc i{width:44px;height:1px;background:var(--mute)}
+#hud{position:fixed;inset:0;z-index:2;pointer-events:none;font-family:var(--mono)}
+#hud .v{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.06)}
+#hud .hh{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,255,.06)}
+#hud .c{position:absolute;width:26px;height:26px;border:2px solid rgba(236,236,234,.5)}
+#hud .tl{left:18px;top:88px;border-right:0;border-bottom:0}#hud .tr{right:18px;top:88px;border-left:0;border-bottom:0}
+#hud .bl{left:18px;bottom:18px;border-right:0;border-top:0}#hud .br{right:18px;bottom:18px;border-left:0;border-top:0}
+#hud .rec,#hud .fps{position:absolute;top:96px;font:500 13px var(--mono);letter-spacing:.14em;display:flex;align-items:center;gap:10px}
+#hud .rec{left:54px}#hud .fps{right:54px;color:var(--mute)}
+#hud .rec b{width:9px;height:9px;border-radius:50%;background:var(--acc);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+#fb{position:absolute;left:0;top:0;width:72px;height:72px;will-change:transform}
+#fb i{position:absolute;width:16px;height:16px;border:2px solid var(--text);transition:border-color .2s}
+#fb i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}#fb i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}
+#fb i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}#fb i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
+#fb span{position:absolute;left:50%;top:84px;transform:translateX(-50%);white-space:nowrap;font:500 12px var(--mono);letter-spacing:.12em}
+#fb.lock i{border-color:var(--acc)}#fb.lock span{color:var(--acc)}
+#lang{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vh;transition:opacity .4s}
+#lang p{margin:0;font:400 13px var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);text-align:center}
+#lang .opts{display:flex;gap:6vw}
+#lang button{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;line-height:.9;font-size:clamp(64px,16vw,220px);background:none;border:0;cursor:pointer;color:transparent;-webkit-text-stroke:2px var(--text);transition:.2s}
+#lang button:hover,#lang button:focus-visible{color:var(--acc);-webkit-text-stroke-color:var(--acc)}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.door{background:var(--bg);padding:6vh 5vw;display:flex;flex-direction:column;gap:14px;min-height:300px;justify-content:flex-end;position:relative;overflow:hidden;transition:background .25s}
+.door:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,106,19,.16),transparent 60%);opacity:0;transition:opacity .3s}
+.door:hover:before{opacity:1}
+.door h2{font-size:clamp(44px,7vw,96px);margin:0;position:relative}
+.door p{margin:0;color:var(--mute);max-width:36ch;position:relative}
+.door b{color:var(--acc);font-weight:600;position:relative}
+.sec{padding:9vh 5vw 2vh;background:var(--bg)}
+.sec h3,.contact h3{font-size:clamp(34px,5vw,64px);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.grid.sm{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.grid.sm .meta{padding:10px 12px 12px}.grid.sm .meta h4{font-size:15px}.grid.sm .play{width:38px;height:38px}.grid.sm .play:after{border-left-width:10px;border-block-width:6px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);transition:transform .15s,border-color .2s;transform-style:preserve-3d;will-change:transform;animation:in .5s both}
+.card:hover{border-color:var(--acc)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.th{aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--g1),#0d0d0e 75%)}
+.th img,.th video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.th video{opacity:0;transition:opacity .3s}
+.card:hover .th video{opacity:1}
+.th:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 4px)}
+.play{position:relative;z-index:3;width:54px;height:54px;border:2px solid var(--text);border-radius:50%;display:grid;place-items:center;transition:.2s}
+.play:after{content:"";border-left:14px solid var(--text);border-block:9px solid transparent;margin-left:4px}
+.card:hover .play{background:var(--acc);border-color:var(--acc);transform:scale(1.1)}
+.tag{position:absolute;z-index:3;left:12px;bottom:10px;font-size:13px;background:rgba(0,0,0,.65);padding:2px 8px}
+.plat{position:absolute;z-index:3;right:12px;top:10px;font-size:12px;color:var(--text);text-shadow:0 1px 4px #000}
+.th.off{opacity:.55}
+.meta{padding:14px 16px 16px}
+.meta h4{margin:0 0 4px;font-size:17px;font-weight:600}
+.meta p{margin:0;color:var(--mute);font-size:14px}
+.more{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--text);border-bottom:2px solid var(--acc);padding-bottom:1px}
+.more:hover{color:var(--acc)}
+.head{padding:8vh 5vw 4vh;background:var(--bg)}
+.head h1{font-size:clamp(48px,9vw,128px);margin:0 0 14px}
+.head p{color:var(--mute);max-width:52ch;margin:0}
+.ctl{display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;align-items:center;margin:0 0 28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 14px Archivo,sans-serif;color:var(--mute);background:none;border:1px solid var(--line);padding:8px 16px;cursor:pointer;transition:.2s}
+.chip:hover{color:var(--text);border-color:var(--text)}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#111}
+.tools{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--mute)}
+.tools select{font:500 14px Archivo,sans-serif;background:var(--panel);color:var(--text);border:1px solid var(--line);padding:8px 10px}
+.dens{display:flex}
+.dens button{font:500 16px Archivo,sans-serif;background:none;color:var(--mute);border:1px solid var(--line);width:40px;height:38px;cursor:pointer}
+.dens button+button{border-left:0}
+.dens button[aria-pressed=true]{color:#111;background:var(--text);border-color:var(--text)}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:22px 0;background:var(--bg)}
+.marq div{display:flex;align-items:center;gap:34px;width:max-content;animation:m 32s linear infinite;font-size:clamp(28px,4vw,48px);color:var(--mute)}
+.marq:hover div{animation-play-state:paused}
+.marq i{font-style:normal;color:var(--acc);font-size:.6em}
+.marq img{height:44px;filter:grayscale(1) brightness(1.6)}
+@keyframes m{to{transform:translateX(-50%)}}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
+.about p{color:var(--text);max-width:56ch;margin:0;font-size:clamp(17px,2vw,21px)}
+.contact{padding:12vh 5vw 8vh;background:var(--bg)}
+.contact a.big{display:block;font-size:clamp(34px,8vw,120px);margin-bottom:26px;overflow-wrap:anywhere;transition:color .2s}
+.contact a.big:hover{color:var(--acc)}
+.soc{display:flex;gap:22px;flex-wrap:wrap;color:var(--mute)}
+.soc a:hover{color:var(--text)}
+footer{padding:26px 5vw;border-top:1px solid var(--line);color:var(--mute);font-size:13px;background:var(--bg)}
+.wk{padding:7vh 5vw 0;background:var(--bg)}
+.back{display:inline-block;color:var(--mute);font-size:14px;margin-bottom:26px}
+.back:hover{color:var(--acc)}
+.wk h1{font-size:clamp(44px,10vw,150px);margin:0;overflow-wrap:anywhere}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:26px 20px;border-block:1px solid var(--line);margin-top:6vh;padding:30px 0}
+.spec small{display:block;font:400 12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.spec span{font:400 14px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.back-stage{max-width:62ch;margin:6vh 0 0}
+.back-stage h3{font-size:clamp(28px,4vw,44px);margin:0 0 14px}
+.back-stage p{color:var(--mute);margin:0 0 12px}
+.emb{position:relative;aspect-ratio:16/9;margin-top:6vh;background:var(--panel);border:1px solid var(--line)}
+.emb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cta{display:flex;justify-content:center;padding:7vh 0 4vh}
+.cta a{border:1px solid var(--text);padding:20px 38px;font:400 14px var(--mono);letter-spacing:.2em;text-transform:uppercase;transition:.2s}
+.cta a:hover{background:var(--acc);border-color:var(--acc);color:#111}
+@media(max-width:760px){.doors,.about{grid-template-columns:1fr}.rt{gap:12px}nav{gap:12px;font-size:13px}.hero .foot{letter-spacing:.14em;font-size:11px}#hud .rec{left:48px}#hud .fps{right:48px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ttl .blur{display:none}.ttl .sharp{-webkit-mask-image:none;mask-image:none}}
+</style>
+</head>
+<body>
+<header>
+  <a href="#/" class="logo d" aria-label="Home">AM</a>
+  <div class="rt">
+    <nav>
+      <a href="#/filmmaker" data-r="filmmaker" data-k="nav_f"></a>
+      <a href="#/camera" data-r="camera" data-k="nav_c"></a>
+      <a href="#/contatti" data-r="contatti" data-k="nav_k"></a>
+    </nav>
+    <div class="lg" role="group" aria-label="Lingua / Language"><button data-l="it" aria-pressed="false">IT</button><button data-l="en" aria-pressed="false">EN</button></div>
+  </div>
+</header>
+<main id="app"></main>
+<footer id="foot"></footer>
+
+<script>
+let D,app=document.getElementById("app");
+const S={c:"Tutti",sort:"feat",dens:"lg"};
+const store={get(k){try{return localStorage.getItem(k)}catch{return null}},set(k,v){try{localStorage.setItem(k,v)}catch{}}};
+let lang=store.get("am_lang"),hadLang=lang==="it"||lang==="en";
+if(!hadLang)lang=(navigator.language||"it").toLowerCase().startsWith("it")?"it":"en";
+let needChoice=!hadLang&&!location.hash.replace(/^#\/?/,"");
+
+const I={
+ it:{nav_f:"Filmmaker",nav_c:"Camera Dept",nav_k:"Contatti",
+  door_f:"Filmmaker<br>Camera Op.",door_f_p:"Riprese, regia e montaggio per eventi, concerti, sport, automotive, adv, moda e videoclip.",
+  door_c:"Camera<br>Department",door_c_p:"1° e 2° assistente camera su set: fuoco, gestione e cura dell'attrezzatura.",see:"Vedi i lavori",
+  sel:"Selezione",clients:"Hanno lavorato con me",about:"Chi sono",together:"Lavoriamo insieme",
+  head_f:"Filmmaker & Camera Op.",head_f_p:"Scegli il settore. Riprese, regia e montaggio per ogni contesto.",head_c:"Camera Department",head_c_p:"1AC e 2AC su set. Scegli il ruolo.",
+  all:"Tutti",sort:"Ordina",s_feat:"In evidenza",s_new:"Più recenti",s_old:"Più vecchi",s_cust:"Ordine personalizzato",dens:"Dimensione card",big:"Card grandi",small:"Card piccole",
+  none:"Nessun lavoro in questa categoria, per ora.",page:"Scheda del lavoro →",back:"← Tutti i lavori",client:"Cliente",year:"Anno",role:"Ruolo",cat:"Settore",gear:"Attrezzatura",
+  backstage:"Backstage",watch:"Guarda il video",watchOn:"Guarda su ",scroll:"Scroll",pick:"Seleziona la lingua · Select language",tbd:"link da aggiungere",watchLbl:"Guarda il video: ",clientsLbl:"Clienti"},
+ en:{nav_f:"Filmmaker",nav_c:"Camera Dept",nav_k:"Contact",
+  door_f:"Filmmaker<br>Camera Op.",door_f_p:"Shooting, direction and editing for events, concerts, sport, automotive, adv, fashion and music videos.",
+  door_c:"Camera<br>Department",door_c_p:"1st and 2nd assistant camera on set: focus, camera management and gear care.",see:"See the work",
+  sel:"Selected work",clients:"Worked with",about:"About",together:"Let's work together",
+  head_f:"Filmmaker & Camera Op.",head_f_p:"Pick a field. Shooting, direction and editing for every context.",head_c:"Camera Department",head_c_p:"1AC and 2AC on set. Pick a role.",
+  all:"All",sort:"Sort",s_feat:"Featured first",s_new:"Newest first",s_old:"Oldest first",s_cust:"Custom order",dens:"Card size",big:"Large cards",small:"Small cards",
+  none:"No work in this category yet.",page:"Project page →",back:"← All work",client:"Client",year:"Year",role:"Role",cat:"Field",gear:"Gear",
+  backstage:"Backstage",watch:"Watch the video",watchOn:"Watch on ",scroll:"Scroll",pick:"Seleziona la lingua · Select language",tbd:"link to add",watchLbl:"Watch the video: ",clientsLbl:"Clients"}
+};
+const CAT={Events:["Eventi","Events"],Concerts:["Concerti","Concerts"],"Music Videos":["Videoclip","Music videos"],"Food & Beverage":["Food & Beverage","Food & Beverage"]};
+const T=k=>I[lang][k]??I.it[k]??k;
+const L=v=>v&&typeof v==="object"?(v[lang]||v.it||v.en||""):(v??"");
+const catName=c=>CAT[c]?CAT[c][lang==="it"?0:1]:c;
+const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+const plat=u=>/instagram/.test(u)?"Instagram":/youtu/.test(u)?"YouTube":/vimeo/.test(u)?"Vimeo":"";
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+const card=(w,i)=>{
+ const inner=`${w.thumb?`<img src="${esc(w.thumb)}" alt="" loading="lazy">`:""}${w.preview?`<video src="${esc(w.preview)}" muted loop playsinline preload="none"></video>`:""}
+ <span class="plat">${plat(w.url)||(w.url?"":T("tbd"))}</span><span class="play"></span><span class="tag">${esc(catName(w.cat))}</span>`;
+ const th=w.url?`<a class="th" href="${esc(w.url)}" target="_blank" rel="noopener" aria-label="${esc(T("watchLbl")+w.title)}" style="--g1:hsl(${hue(w.cat)} 45% 22%)">${inner}</a>`
+  :`<div class="th off" style="--g1:hsl(${hue(w.cat)} 45% 22%)">${inner}</div>`;
+ const sub=[w.client,w.year].filter(Boolean).join(" · ");
+ return `<article class="card" style="animation-delay:${i*60}ms">${th}
+ <div class="meta"><h4>${esc(w.title)}</h4><p>${esc(sub)}</p><p>${esc(L(w.role))}</p><a class="more" href="#/work/${esc(w.id)}">${T("page")}</a></div></article>`;
+};
+const contact=()=>`<section class="contact" id="contatti"><h3 class="d">${T("together")}</h3>
+ <a class="big d" href="mailto:${esc(D.site.email)}">${esc(D.site.email)}</a>
+ <div class="soc"><a href="${esc(D.site.instagram)}" target="_blank" rel="noopener">Instagram</a><a href="${esc(D.site.behance)}" target="_blank" rel="noopener">Behance</a></div></section>`;
+const clients=()=>{const it=D.clients.map(c=>typeof c==="string"?`<span class="d">${esc(c)}</span>`:`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`).join("<i>●</i>");return `<div class="marq" aria-label="${T("clientsLbl")}"><div>${it}<i>●</i>${it}<i>●</i></div></div>`};
+
+function home(){
+ const [a,...b]=D.site.name.split(" "),bn=b.join(" ");
+ return `<section class="hero"><div class="ttl"><div class="d blur" aria-hidden="true"><span>${esc(a)}</span><span class="b">${esc(bn)}</span></div>
+  <h1 class="d sharp"><span data-t="${esc(a)}">${esc(a)}</span><span class="b" data-t="${esc(bn)}">${esc(bn)}</span></h1></div>
+  <p class="lead">${esc(L(D.site.tagline))}</p>
+  <div class="foot"><span>${esc(L(D.site.location))}</span><span class="sc">${T("scroll")}<i></i></span></div></section>
+ <div class="doors">
+  <a class="door" href="#/filmmaker"><h2 class="d">${T("door_f")}</h2><p>${T("door_f_p")}</p><b>${T("see")}</b></a>
+  <a class="door" href="#/camera"><h2 class="d">${T("door_c")}</h2><p>${T("door_c_p")}</p><b>${T("see")}</b></a></div>
+ <section class="sec"><h3 class="d">${T("sel")}</h3><div class="grid">${D.works.filter(w=>w.best).map(card).join("")}</div></section>
+ <section class="sec"><h3 class="d">${T("clients")}</h3></section>${clients()}
+ <section class="sec"><div class="about"><h3 class="d">${T("about")}</h3><p>${esc(L(D.site.bio))}</p></div></section>${contact()}`;
+}
+
+function area(a){
+ const f=a==="filmmaker";
+ return `<section class="head"><h1 class="d">${T(f?"head_f":"head_c")}</h1><p>${T(f?"head_f_p":"head_c_p")}</p></section><section class="sec" style="padding-top:0">
+ <div class="ctl"><div class="chips" id="chips">${["Tutti",...D.categories[a]].map(c=>`<button class="chip ${c===S.c?"on":""}" data-c="${esc(c)}">${esc(c==="Tutti"?T("all"):catName(c))}</button>`).join("")}</div>
+ <div class="tools"><label>${T("sort")} <select id="sort"><option value="feat">${T("s_feat")}</option><option value="new">${T("s_new")}</option><option value="old">${T("s_old")}</option><option value="custom">${T("s_cust")}</option></select></label>
+ <div class="dens" role="group" aria-label="${T("dens")}"><button data-d="lg" aria-label="${T("big")}">▢</button><button data-d="sm" aria-label="${T("small")}">▦</button></div></div></div>
+ <div class="grid" id="g"></div></section>${contact()}`;
+}
+function fill(a){
+ const idx=new Map(D.works.map((w,i)=>[w,i])),yr=w=>parseInt(w.year)||0;
+ const Ls=D.works.filter(w=>w.area===a&&(S.c==="Tutti"||w.cat===S.c));
+ Ls.sort((x,y)=>S.sort==="feat"?(!!y.best-!!x.best)||idx.get(x)-idx.get(y):S.sort==="new"?(yr(y)-yr(x))||idx.get(x)-idx.get(y):S.sort==="old"?(yr(x)-yr(y))||idx.get(x)-idx.get(y):idx.get(x)-idx.get(y));
+ const g=document.getElementById("g");g.className="grid"+(S.dens==="sm"?" sm":"");
+ g.innerHTML=Ls.map(card).join("")||`<p style="color:var(--mute)">${T("none")}</p>`;
+ document.getElementById("sort").value=S.sort;
+ document.querySelectorAll(".dens button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===S.dens));
+}
+function embed(u){
+ let m=u.match(/(?:youtube\.com\/watch\?[^#]*v=|youtu\.be\/)([\w-]{11})/);if(m)return `https://www.youtube.com/embed/${m[1]}`;
+ m=u.match(/vimeo\.com\/(?:video\/)?(\d+)/);if(m)return `https://player.vimeo.com/video/${m[1]}`;return "";
+}
+function workPage(w){
+ const back=w.area==="camera"?"#/camera":"#/filmmaker";
+ const rows=[[T("client"),w.client],[T("year"),w.year],[T("role"),L(w.role)],[T("cat"),catName(w.cat)],[T("gear"),w.gear]].filter(r=>r[1]);
+ const em=embed(w.url||""),paras=L(w.desc).split(/\n+/).filter(Boolean);
+ return `<section class="wk"><a class="back" href="${back}">${T("back")}</a><h1 class="d">${esc(w.title)}</h1>
+ <div class="spec">${rows.map(r=>`<div><small>${esc(r[0])}</small><span>${esc(r[1])}</span></div>`).join("")}</div>
+ ${em?`<div class="emb"><iframe src="${em}" title="${esc(w.title)}" loading="lazy" allowfullscreen></iframe></div>`:""}
+ ${paras.length?`<div class="back-stage"><h3 class="d">${T("backstage")}</h3>${paras.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`:""}
+ ${w.url?`<div class="cta"><a href="${esc(w.url)}" target="_blank" rel="noopener">${plat(w.url)?T("watchOn")+plat(w.url):T("watch")} →</a></div>`:'<div style="height:6vh"></div>'}</section>${contact()}`;
+}
+
+/* effetto hero: "fuoco" da cinepresa. Il nome è sfocato e si mette a fuoco dove punti il cursore;
+   scorrendo il fuoco si allarga fino a coprire tutto, poi l'interfaccia da mirino svanisce. */
+const fx={raf:0,hud:null,onMove:null,onResize:null};
+function stopFX(){cancelAnimationFrame(fx.raf);fx.hud&&fx.hud.remove();fx.hud=null;removeEventListener("pointermove",fx.onMove);removeEventListener("resize",fx.onResize)}
+function startFX(){
+ if(reduce)return;
+ const hud=document.createElement("div");hud.id="hud";hud.setAttribute("aria-hidden","true");
+ hud.innerHTML='<i class="v" style="left:33.333%"></i><i class="v" style="left:66.666%"></i><i class="hh" style="top:33.333%"></i><i class="hh" style="top:66.666%"></i><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><div class="rec"><b></b>REC <span id="tc">00:00:00:00</span></div><div class="fps">25 FPS · 1/50</div><div id="fb"><i></i><i></i><i></i><i></i><span id="fl"></span></div>';
+ document.body.append(hud);fx.hud=hud;
+ const fb=hud.querySelector("#fb"),fl=hud.querySelector("#fl"),tc=hud.querySelector("#tc"),ttl=document.querySelector(".ttl");
+ let W=innerWidth,H=innerHeight,tx=W*.6,ty=H*.4,px=tx,py=ty,moved=false;const t0=performance.now(),pad=n=>String(n).padStart(2,"0");
+ fx.onResize=()=>{W=innerWidth;H=innerHeight};fx.onMove=e=>{moved=true;tx=e.clientX;ty=e.clientY};
+ addEventListener("resize",fx.onResize);addEventListener("pointermove",fx.onMove,{passive:true});
+ function frame(now){
+  const t=now-t0,p=Math.min(Math.max(scrollY/(H*.8),0),1),rc=ttl.getBoundingClientRect();
+  if(!moved){tx=W*(.5+.28*Math.sin(t*.0005));ty=rc.top+rc.height*(.5+.3*Math.sin(t*.0008+1))}
+  const dx=tx-px,dy=ty-py;px+=dx*.08;py+=dy*.08;const sp=Math.hypot(dx,dy);
+  ttl.style.setProperty("--mx",(px-rc.left)+"px");ttl.style.setProperty("--my",(py-rc.top)+"px");
+  ttl.style.setProperty("--r",((W<700?120:180)+p*1500)+"px");ttl.style.setProperty("--b",(12*(1-p))+"px");
+  const o=Math.max(0,1-p*1.25);hud.style.opacity=o;hud.style.visibility=o?"visible":"hidden";
+  const lock=sp<4;
+  fb.style.transform=`translate(${px-36}px,${py-36}px) scale(${1+Math.min(sp/260,.45)})`;fb.classList.toggle("lock",lock);
+  fl.textContent=(lock?"LOCK ":"AF ")+(.4+py/H*4.6).toFixed(1)+"M";
+  const fr=Math.floor(t/40),sec=Math.floor(fr/25);
+  tc.textContent=`00:${pad(Math.floor(sec/60)%60)}:${pad(sec%60)}:${pad(fr%25)}`;
+  fx.raf=requestAnimationFrame(frame);
+ }
+ fx.raf=requestAnimationFrame(frame);
+}
+function scramble(el){
+ if(reduce)return;
+ el.querySelectorAll("h1 [data-t]").forEach(n=>{const t=n.dataset.t,tn=n.firstChild;let i=0;const ch="ABCDEFGHIJKLMNOPQRSTUVWXYZ#/<>";
+  const id=setInterval(()=>{tn.nodeValue=t.split("").map((c,k)=>c===" "||k<i?c:ch[Math.random()*ch.length|0]).join("");if(i++>=t.length){tn.nodeValue=t;clearInterval(id)}},60)});
+}
+
+document.addEventListener("mousemove",e=>{
+ const d=e.target.closest?.(".door");if(d){const r=d.getBoundingClientRect();d.style.setProperty("--mx",e.clientX-r.left+"px");d.style.setProperty("--my",e.clientY-r.top+"px")}
+ const c=e.target.closest?.(".card");document.querySelectorAll(".card").forEach(k=>{if(k!==c)k.style.transform=""});
+ if(c&&!reduce){const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`}
+});
+document.addEventListener("mouseover",e=>{const v=e.target.closest?.(".card")?.querySelector("video");if(v)v.play().catch(()=>{})});
+document.addEventListener("mouseout",e=>{const v=e.target.closest?.(".card")?.querySelector("video");if(v){v.pause();v.currentTime=0}});
+
+function setLang(l){lang=l;hadLang=true;store.set("am_lang",l);route()}
+document.querySelector(".lg").onclick=e=>{const b=e.target.closest("button");if(b)setLang(b.dataset.l)};
+function chooser(){
+ if(document.getElementById("lang"))return;
+ const o=document.createElement("div");o.id="lang";o.setAttribute("role","dialog");o.setAttribute("aria-modal","true");o.setAttribute("aria-label","Language");
+ o.innerHTML=`<div class="opts"><button data-l="it">ITA</button><button data-l="en">ENG</button></div><p>${I.it.pick}</p>`;
+ document.body.append(o);document.body.style.overflow="hidden";o.querySelector("button").focus();
+ o.onclick=e=>{const b=e.target.closest("button");if(!b)return;needChoice=false;o.style.opacity=0;document.body.style.overflow="";setTimeout(()=>o.remove(),400);setLang(b.dataset.l)};
+}
+
+function route(){
+ stopFX();
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-k]").forEach(a=>a.textContent=T(a.dataset.k));
+ document.querySelectorAll(".lg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
+ const h=location.hash.replace(/^#\/?/,"");
+ let r="home",work=null;
+ if(h==="filmmaker"||h==="camera")r=h;
+ else if(h==="contatti")r="contatti";
+ else if(h.startsWith("work/")){work=D.works.find(w=>w.id===decodeURIComponent(h.slice(5)));if(work)r="work"}
+ document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===r||(r==="work"&&a.dataset.r===work.area)));
+ document.getElementById("foot").textContent="© "+D.site.name;
+ if(r==="work"){app.innerHTML=workPage(work);scrollTo(0,0);document.title=work.title+" – Alessio Melia";return}
+ document.title="Alessio Melia – Filmmaker & Camera Department";
+ if(r==="filmmaker"||r==="camera"){
+  if(!document.getElementById("g"))S.c="Tutti";
+  app.innerHTML=area(r);fill(r);scrollTo(0,0);
+  document.getElementById("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;S.c=b.dataset.c;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===b));fill(r)};
+  document.getElementById("sort").onchange=e=>{S.sort=e.target.value;fill(r)};
+  document.querySelector(".dens").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.dens=b.dataset.d;fill(r)};
+ }else{
+  app.innerHTML=home();
+  if(needChoice){chooser();return}
+  startFX();
+  if(r==="contatti")document.getElementById("contatti").scrollIntoView();
+  else{scrollTo(0,0);scramble(app)}
+ }
+}
+Promise.resolve({"site": {"name": "Alessio Melia", "location": {"it": "Milano · IT — Worldwide", "en": "Milan · IT — Worldwide"}, "tagline": {"it": "Filmmaker e reparto camera. Set, eventi, sport, automotive: la mia visione racchiusa in 25 fotogrammi al secondo.", "en": "Filmmaker and camera department. Sets, events, sport, automotive: my vision wrapped in 25 frames per second."}, "bio": {"it": "Sono Alessio - Filmmaker, operatore video e assistente camera con sede a Milano, Italia. Racconto storie in movimento, dal palco alla pista fino al set.", "en": "I'm Alessio - filmmaker, video operator and camera assistant based in Milan, Italy. I tell stories in motion, from the stage to the track to the set."}, "email": "hello@tuodominio.it", "instagram": "https://www.instagram.com/alessiomeliafilms/", "behance": "https://www.behance.net/"}, "categories": {"filmmaker": ["Events", "Concerts", "Adv", "Sport", "Automotive", "Food & Beverage", "Fashion", "Music Videos"], "camera": ["1AC", "2AC"]}, "clients": ["Cliente 1", "Cliente 2", "Cliente 3", "Cliente 4", "Cliente 5", "Cliente 6"], "works": [{"id": "concerto-esempio", "area": "filmmaker", "cat": "Concerts", "title": "Titolo concerto", "client": "Cliente", "year": "2026", "role": {"it": "Riprese", "en": "Camera Op."}, "gear": "Camera, ottiche, supporti", "desc": {"it": "Qui racconti il backstage: com'è nato il progetto, che attrezzatura hai usato, le difficoltà sul set.", "en": "Tell the backstage story here: how the project started, the gear you used, the challenges on set."}, "url": "https://www.instagram.com/p/DI_HLY5NLfY/", "thumb": "", "preview": "", "best": true}, {"id": "sport-esempio", "area": "filmmaker", "cat": "Sport", "title": "Titolo progetto sport", "client": "Cliente", "year": "2026", "role": {"it": "Regia e montaggio", "en": "Direction and editing"}, "gear": "", "desc": {"it": "", "en": ""}, "url": "https://www.instagram.com/p/DdjlSdfOP6L/", "thumb": "", "preview": "", "best": true}, {"id": "automotive-esempio", "area": "filmmaker", "cat": "Automotive", "title": "Titolo progetto automotive", "client": "Cliente", "year": "2026", "role": {"it": "Riprese", "en": "Camera Op."}, "gear": "", "desc": {"it": "", "en": ""}, "url": "https://www.youtube.com/watch?v=3FxGhg7AgPY", "thumb": "", "preview": "", "best": true}, {"id": "set-1ac-esempio", "area": "camera", "cat": "1AC", "title": "Titolo set 1AC", "client": "Produzione", "year": "2026", "role": {"it": "1° assistente camera", "en": "1st Assistant Camera"}, "gear": "", "desc": {"it": "", "en": ""}, "url": "https://www.instagram.com/reels/DZH30gHqWvq/", "thumb": "", "preview": "", "best": true}, {"id": "set-2ac-esempio", "area": "camera", "cat": "2AC", "title": "Titolo set 2AC", "client": "Produzione", "year": "2025", "role": {"it": "2° assistente camera", "en": "2nd Assistant Camera"}, "gear": "", "desc": {"it": "", "en": ""}, "url": "https://www.youtube.com/watch?v=WQNQ4H6Y6E8", "thumb": "", "preview": "", "best": false}]}).then(j=>{
+ D=j;D.works.forEach(w=>{w.id=w.id||String(w.title||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")});
+ addEventListener("hashchange",()=>{S.c="Tutti";route()});route()})
+ .catch(()=>app.innerHTML='<p style="padding:10vh 5vw">Impossibile caricare data.json. Se hai aperto il file dal computer, avvia un piccolo server locale (vedi README) oppure pubblica il sito.</p>');
+</script>
+</body>
+</html>

@@ -1,8 +1,15 @@
 {
   "site": {
     "name": "Alessio Melia",
-    "tagline": "Videomaker e camera operator. Concerti, sport, automotive e set: immagini con energia, consegnate con ordine.",
-    "bio": "Sono Alessio, videomaker e assistente camera. Racconto storie in movimento, dal palco alla pista fino al set. Qui va la tua bio: due o tre righe su come lavori, che attrezzatura usi e che progetti cerchi.",
+    "location": { "it": "Milano · IT — Worldwide", "en": "Milan · IT — Worldwide" },
+    "tagline": {
+      "it": "Filmmaker e reparto camera. Set, eventi, sport, automotive: la mia visione racchiusa in 25 fotogrammi al secondo.",
+      "en": "Filmmaker and camera department. Sets, events, sport, automotive: my vision wrapped in 25 frames per second."
+    },
+    "bio": {
+      "it": "Sono Alessio - Filmmaker, operatore video e assistente camera con sede a Milano, Italia. Racconto storie in movimento, dal palco alla pista fino al set.",
+      "en": "I'm Alessio - filmmaker, video operator and camera assistant based in Milan, Italy. I tell stories in motion, from the stage to the track to the set."
+    },
     "email": "hello@tuodominio.it",
     "instagram": "https://www.instagram.com/alessiomeliafilms/",
     "behance": "https://www.behance.net/"
@@ -11,18 +18,12 @@
     "filmmaker": ["Events", "Concerts", "Adv", "Sport", "Automotive", "Food & Beverage", "Fashion", "Music Videos"],
     "camera": ["1AC", "2AC"]
   },
-  "services": [
-    { "t": "Riprese", "d": "Camera operator con corpo camera e ottiche a scelta, su treppiede, gimbal o a spalla." },
-    { "t": "Video completi", "d": "Dalla ripresa al montaggio: contenuti social, recap evento, spot." },
-    { "t": "Camera department", "d": "1AC e 2AC su set: fuoco, gestione camera e attrezzatura." },
-    { "t": "Montaggio", "d": "Editing, color base e consegna nei formati per ogni piattaforma." }
-  ],
   "clients": ["Cliente 1", "Cliente 2", "Cliente 3", "Cliente 4", "Cliente 5", "Cliente 6"],
   "works": [
-    { "area": "filmmaker", "cat": "Concerts", "title": "Titolo concerto", "role": "Camera Op.", "url": "https://www.instagram.com/p/DI_HLY5NLfY/", "thumb": "", "preview": "", "best": true },
-    { "area": "filmmaker", "cat": "Sport", "title": "Titolo progetto sport", "role": "Videomaker", "url": "https://www.instagram.com/p/DdjlSdfOP6L/", "thumb": "", "preview": "", "best": true },
-    { "area": "filmmaker", "cat": "Automotive", "title": "Titolo progetto automotive", "role": "Camera Op.", "url": "https://www.youtube.com/watch?v=3FxGhg7AgPY", "thumb": "", "preview": "", "best": true },
-    { "area": "camera", "cat": "1AC", "title": "Titolo set 1AC", "role": "1st Assistant Camera", "url": "https://www.instagram.com/reels/DZH30gHqWvq/", "thumb": "", "preview": "", "best": true },
-    { "area": "camera", "cat": "2AC", "title": "Titolo set 2AC", "role": "2nd Assistant Camera", "url": "https://www.youtube.com/watch?v=WQNQ4H6Y6E8", "thumb": "", "preview": "", "best": false }
+    { "id": "concerto-esempio", "area": "filmmaker", "cat": "Concerts", "title": "Titolo concerto", "client": "Cliente", "year": "2026", "role": { "it": "Riprese", "en": "Camera Op." }, "gear": "Camera, ottiche, supporti", "desc": { "it": "Qui racconti il backstage: com'è nato il progetto, che attrezzatura hai usato, le difficoltà sul set.", "en": "Tell the backstage story here: how the project started, the gear you used, the challenges on set." }, "url": "https://www.instagram.com/p/DI_HLY5NLfY/", "thumb": "", "preview": "", "best": true },
+    { "id": "sport-esempio", "area": "filmmaker", "cat": "Sport", "title": "Titolo progetto sport", "client": "Cliente", "year": "2026", "role": { "it": "Regia e montaggio", "en": "Direction and editing" }, "gear": "", "desc": { "it": "", "en": "" }, "url": "https://www.instagram.com/p/DdjlSdfOP6L/", "thumb": "", "preview": "", "best": true },
+    { "id": "automotive-esempio", "area": "filmmaker", "cat": "Automotive", "title": "Titolo progetto automotive", "client": "Cliente", "year": "2026", "role": { "it": "Riprese", "en": "Camera Op." }, "gear": "", "desc": { "it": "", "en": "" }, "url": "https://www.youtube.com/watch?v=3FxGhg7AgPY", "thumb": "", "preview": "", "best": true },
+    { "id": "set-1ac-esempio", "area": "camera", "cat": "1AC", "title": "Titolo set 1AC", "client": "Produzione", "year": "2026", "role": { "it": "1° assistente camera", "en": "1st Assistant Camera" }, "gear": "", "desc": { "it": "", "en": "" }, "url": "https://www.instagram.com/reels/DZH30gHqWvq/", "thumb": "", "preview": "", "best": true },
+    { "id": "set-2ac-esempio", "area": "camera", "cat": "2AC", "title": "Titolo set 2AC", "client": "Produzione", "year": "2025", "role": { "it": "2° assistente camera", "en": "2nd Assistant Camera" }, "gear": "", "desc": { "it": "", "en": "" }, "url": "https://www.youtube.com/watch?v=WQNQ4H6Y6E8", "thumb": "", "preview": "", "best": false }
   ]
 }
