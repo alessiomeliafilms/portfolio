@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "Alessio Melia",
+    "tagline": "Videomaker e camera operator. Concerti, sport, automotive e set: immagini con energia, consegnate con ordine.",
+    "bio": "Sono Alessio, videomaker e assistente camera. Racconto storie in movimento, dal palco alla pista fino al set. Qui va la tua bio: due o tre righe su come lavori, che attrezzatura usi e che progetti cerchi.",
+    "email": "hello@tuodominio.it",
+    "instagram": "https://www.instagram.com/alessiomeliafilms/",
+    "behance": "https://www.behance.net/"
+  },
+  "categories": {
+    "filmmaker": ["Events", "Concerts", "Adv", "Sport", "Automotive", "Food & Beverage", "Fashion", "Music Videos"],
+    "camera": ["1AC", "2AC"]
+  },
+  "services": [
+    { "t": "Riprese", "d": "Camera operator con corpo camera e ottiche a scelta, su treppiede, gimbal o a spalla." },
+    { "t": "Video completi", "d": "Dalla ripresa al montaggio: contenuti social, recap evento, spot." },
+    { "t": "Camera department", "d": "1AC e 2AC su set: fuoco, gestione camera e attrezzatura." },
+    { "t": "Montaggio", "d": "Editing, color base e consegna nei formati per ogni piattaforma." }
+  ],
+  "clients": ["Cliente 1", "Cliente 2", "Cliente 3", "Cliente 4", "Cliente 5", "Cliente 6"],
+  "works": [
+    { "area": "filmmaker", "cat": "Concerts", "title": "Titolo concerto", "role": "Camera Op.", "url": "https://www.instagram.com/p/DI_HLY5NLfY/", "thumb": "", "preview": "", "best": true },
+    { "area": "filmmaker", "cat": "Sport", "title": "Titolo progetto sport", "role": "Videomaker", "url": "https://www.instagram.com/p/DdjlSdfOP6L/", "thumb": "", "preview": "", "best": true },
+    { "area": "filmmaker", "cat": "Automotive", "title": "Titolo progetto automotive", "role": "Camera Op.", "url": "https://www.youtube.com/watch?v=3FxGhg7AgPY", "thumb": "", "preview": "", "best": true },
+    { "area": "camera", "cat": "1AC", "title": "Titolo set 1AC", "role": "1st Assistant Camera", "url": "https://www.instagram.com/reels/DZH30gHqWvq/", "thumb": "", "preview": "", "best": true },
+    { "area": "camera", "cat": "2AC", "title": "Titolo set 2AC", "role": "2nd Assistant Camera", "url": "https://www.youtube.com/watch?v=WQNQ4H6Y6E8", "thumb": "", "preview": "", "best": false }
+  ]
+}

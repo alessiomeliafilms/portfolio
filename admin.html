@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Pannello – Alessio Melia</title>
+<style>
+:root{--bg:#0d0d0e;--panel:#161617;--line:#2a2a2c;--text:#ececea;--mute:#8d8d90;--acc:#ff6a13;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+h1{font-size:18px;margin:0}
+button,.btn{font:500 14px system-ui;background:var(--panel);color:var(--text);border:1px solid var(--line);padding:8px 14px;cursor:pointer}
+button:hover{border-color:var(--text)}
+.pri{background:var(--acc);border-color:var(--acc);color:#111}
+.tabs{display:flex;gap:6px;padding:14px 20px 0}
+.tabs button.on{border-color:var(--acc);color:var(--acc)}
+.layout{display:grid;grid-template-columns:320px 1fr;gap:20px;padding:20px}
+.list{display:flex;flex-direction:column;gap:6px}
+.item{padding:10px 12px;background:var(--panel);border:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.item.on{border-color:var(--acc)}
+.item small{color:var(--mute);display:block}
+.pane{background:var(--panel);border:1px solid var(--line);padding:20px;display:grid;gap:14px;align-content:start}
+label{display:grid;gap:4px;color:var(--mute);font-size:13px}
+input,select,textarea{font:15px system-ui;background:var(--bg);color:var(--text);border:1px solid var(--line);padding:9px;width:100%}
+textarea{min-height:110px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ck{display:flex;align-items:center;gap:8px;color:var(--text)}
+.ck input{width:auto}
+.bar{display:flex;gap:8px;flex-wrap:wrap}
+#msg{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--acc);color:#111;padding:10px 18px;display:none;max-width:90vw}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:22px;width:min(520px,92vw)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.note{color:var(--mute);font-size:13px;margin:0}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Pannello contenuti <span class="note" id="state"></span></h1>
+  <div class="bar">
+    <button id="imp">Importa</button>
+    <button id="dl">Scarica data.json</button>
+    <button id="gh" class="pri">Pubblica su GitHub</button>
+  </div>
+</header>
+<div class="tabs"><button data-t="works" class="on">Progetti</button><button data-t="settings">Sito, servizi e clienti</button></div>
+<div id="root"></div>
+<div id="msg"></div>
+<input type="file" id="file" accept=".json" hidden>
+
+<dialog id="dlg">
+  <h3 style="margin-top:0">Pubblica su GitHub</h3>
+  <p class="note">Salva data.json direttamente nel repository: il sito si aggiorna da solo dopo circa un minuto. Il token resta solo in questo browser.</p>
+  <div style="display:grid;gap:12px;margin-top:14px">
+    <div class="row"><label>Utente GitHub<input id="g_o"></label><label>Repository<input id="g_r"></label></div>
+    <div class="row"><label>Branch<input id="g_b" value="main"></label><label>Percorso file<input id="g_p" value="data.json"></label></div>
+    <label>Token (fine-grained, permesso Contents: Read and write)<input id="g_t" type="password" autocomplete="off"></label>
+    <div class="bar"><button id="g_go" class="pri">Pubblica</button><button id="g_x">Chiudi</button></div>
+  </div>
+</dialog>
+
+<script>
+let D, sel=0, tab="works";
+const $=s=>document.querySelector(s), root=$("#root");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const toast=t=>{const m=$("#msg");m.textContent=t;m.style.display="block";setTimeout(()=>m.style.display="none",3200)};
+const save=()=>{localStorage.setItem("am_draft",JSON.stringify(D));$("#state").textContent="· bozza non pubblicata"};
+
+async function init(){
+  const draft=localStorage.getItem("am_draft");
+  if(draft){D=JSON.parse(draft);$("#state").textContent="· bozza non pubblicata"}
+  else{try{D=await (await fetch("data.json?"+Date.now())).json()}catch{D={site:{name:"",tagline:"",bio:"",email:"",instagram:"",behance:""},categories:{filmmaker:[],camera:[]},services:[],clients:[],works:[]};toast("data.json non trovato: parti da zero o usa Importa")}}
+  render();
+}
+function render(){tab==="works"?renderWorks():renderSettings();document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===tab))}
+
+function renderWorks(){
+  const w=D.works[sel];
+  root.innerHTML=`<div class="layout"><div>
+    <div class="bar" style="margin-bottom:10px"><button class="pri" id="add">+ Nuovo progetto</button></div>
+    <div class="list">${D.works.map((x,i)=>`<div class="item ${i===sel?"on":""}" data-i="${i}"><span>${esc(x.title||"Senza titolo")}<small>${esc(x.area)} · ${esc(x.cat)}${x.best?" · in home":""}</small></span></div>`).join("")||'<p class="note">Nessun progetto.</p>'}</div></div>
+    ${w?`<div class="pane">
+      <label>Titolo<input data-f="title" value="${esc(w.title)}"></label>
+      <div class="row">
+        <label>Sezione<select data-f="area"><option value="filmmaker" ${w.area==="filmmaker"?"selected":""}>Filmmaker / Camera Op.</option><option value="camera" ${w.area==="camera"?"selected":""}>Camera Department</option></select></label>
+        <label>Categoria<select data-f="cat">${D.categories[w.area].map(c=>`<option ${c===w.cat?"selected":""}>${esc(c)}</option>`).join("")}</select></label></div>
+      <label>Ruolo (es. Camera Op., 1AC)<input data-f="role" value="${esc(w.role)}"></label>
+      <label>Link al video (Instagram, YouTube, Vimeo)<input data-f="url" value="${esc(w.url)}"></label>
+      <div class="row"><label>Miniatura (percorso o URL, es. img/nome.jpg)<input data-f="thumb" value="${esc(w.thumb)}"></label>
+      <label>Anteprima al passaggio del mouse (mp4 breve, opzionale)<input data-f="preview" value="${esc(w.preview)}"></label></div>
+      <label class="ck"><input type="checkbox" data-f="best" ${w.best?"checked":""}> Mostra nella selezione della homepage</label>
+      <div class="bar"><button id="up">Sposta su</button><button id="down">Sposta giù</button><button id="del">Elimina</button></div>
+      <p class="note">Le immagini vanno caricate nella cartella img/ del repository. L'ordine qui è l'ordine sul sito.</p></div>`:""}</div>`;
+  root.querySelectorAll(".item").forEach(e=>e.onclick=()=>{sel=+e.dataset.i;render()});
+  $("#add").onclick=()=>{D.works.unshift({area:"filmmaker",cat:D.categories.filmmaker[0]||"",title:"Nuovo progetto",role:"",url:"",thumb:"",preview:"",best:false});sel=0;save();render()};
+  if(!w)return;
+  root.querySelectorAll("[data-f]").forEach(e=>e.onchange=()=>{const f=e.dataset.f;w[f]=e.type==="checkbox"?e.checked:e.value;if(f==="area")w.cat=D.categories[w.area][0]||"";save();render()});
+  const mv=d=>{const j=sel+d;if(j<0||j>=D.works.length)return;[D.works[sel],D.works[j]]=[D.works[j],D.works[sel]];sel=j;save();render()};
+  $("#up").onclick=()=>mv(-1);$("#down").onclick=()=>mv(1);
+  $("#del").onclick=()=>{if(confirm("Eliminare questo progetto?")){D.works.splice(sel,1);sel=Math.max(0,sel-1);save();render()}};
+}
+
+function renderSettings(){
+  const s=D.site;
+  root.innerHTML=`<div class="layout" style="grid-template-columns:1fr"><div class="pane">
+   <div class="row"><label>Nome<input data-s="name" value="${esc(s.name)}"></label><label>Email<input data-s="email" value="${esc(s.email)}"></label></div>
+   <label>Frase in homepage<textarea data-s="tagline">${esc(s.tagline)}</textarea></label>
+   <label>Bio<textarea data-s="bio">${esc(s.bio)}</textarea></label>
+   <div class="row"><label>Instagram (URL)<input data-s="instagram" value="${esc(s.instagram)}"></label><label>Behance (URL)<input data-s="behance" value="${esc(s.behance)}"></label></div>
+   <div class="row"><label>Categorie Filmmaker (separate da virgola)<input id="c_f" value="${esc(D.categories.filmmaker.join(", "))}"></label>
+   <label>Categorie Camera Dept (separate da virgola)<input id="c_c" value="${esc(D.categories.camera.join(", "))}"></label></div>
+   <label>Servizi (una riga per servizio: Titolo | descrizione)<textarea id="svc">${esc(D.services.map(x=>x.t+" | "+x.d).join("\n"))}</textarea></label>
+   <label>Clienti (uno per riga: Nome oppure Nome | img/logo.png)<textarea id="cli">${esc(D.clients.map(c=>typeof c==="string"?c:c.name+" | "+c.logo).join("\n"))}</textarea></label></div></div>`;
+  root.querySelectorAll("[data-s]").forEach(e=>e.onchange=()=>{D.site[e.dataset.s]=e.value;save()});
+  const list=v=>v.split(",").map(x=>x.trim()).filter(Boolean);
+  $("#c_f").onchange=e=>{D.categories.filmmaker=list(e.target.value);save()};
+  $("#c_c").onchange=e=>{D.categories.camera=list(e.target.value);save()};
+  $("#svc").onchange=e=>{D.services=e.target.value.split("\n").filter(Boolean).map(l=>{const[a,...b]=l.split("|");return{t:a.trim(),d:b.join("|").trim()}});save()};
+  $("#cli").onchange=e=>{D.clients=e.target.value.split("\n").filter(Boolean).map(l=>{const[a,b]=l.split("|").map(x=>x.trim());return b?{name:a,logo:b}:a});save()};
+}
+
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.t;render()});
+$("#dl").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(D,null,2)],{type:"application/json"}));a.download="data.json";a.click()};
+$("#imp").onclick=()=>$("#file").click();
+$("#file").onchange=async e=>{try{D=JSON.parse(await e.target.files[0].text());sel=0;save();render();toast("Importato")}catch{toast("File non valido")}};
+
+const K=["o","r","b","p","t"];
+$("#gh").onclick=()=>{K.forEach(k=>{const v=localStorage.getItem("am_gh_"+k);if(v)$("#g_"+k).value=v});$("#dlg").showModal()};
+$("#g_x").onclick=()=>$("#dlg").close();
+$("#g_go").onclick=async()=>{
+  const v=k=>$("#g_"+k).value.trim();K.forEach(k=>localStorage.setItem("am_gh_"+k,v(k)));
+  const url=`https://api.github.com/repos/${v("o")}/${v("r")}/contents/${v("p")}`,H={Authorization:"Bearer "+v("t"),Accept:"application/vnd.github+json"};
+  try{
+    let sha;const g=await fetch(url+"?ref="+v("b"),{headers:H});if(g.ok)sha=(await g.json()).sha;else if(g.status!==404)throw new Error("Lettura fallita ("+g.status+"): controlla token e repository");
+    const body={message:"Aggiorna contenuti dal pannello",branch:v("b"),content:btoa(unescape(encodeURIComponent(JSON.stringify(D,null,2)))),...(sha?{sha}:{})};
+    const p=await fetch(url,{method:"PUT",headers:{...H,"Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(!p.ok)throw new Error("Scrittura fallita ("+p.status+")");
+    localStorage.removeItem("am_draft");$("#state").textContent="· pubblicato";$("#dlg").close();toast("Pubblicato. Il sito si aggiorna tra circa un minuto.");
+  }catch(err){toast(err.message)}
+};
+init();
+</script>
+</body>
+</html>

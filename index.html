@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alessio Melia – Videomaker & Camera Dept</title>
+<meta name="description" content="Portfolio di Alessio Melia: videomaker, camera operator e assistente camera.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0e;--panel:#161617;--line:#2a2a2c;--text:#ececea;--mute:#8d8d90;--acc:#ff6a13;color-scheme:dark}
+html{scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.55 Archivo,system-ui,sans-serif;padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit;text-decoration:none}
+.d{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:.01em}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0)) 5vw 14px;background:rgba(13,13,14,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{width:42px;height:42px;border:2px solid var(--text);display:grid;place-items:center;font-size:24px;position:relative;clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%);transition:.25s}
+.logo:after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;background:var(--acc)}
+.logo:hover{background:var(--text);color:var(--bg)}
+nav{display:flex;gap:26px;font-size:14px;font-weight:500}
+nav a{color:var(--mute);padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover,nav a.on{color:var(--text);border-color:var(--acc)}
+.hero{padding:9vh 5vw 6vh}
+.hero h1{font-size:clamp(64px,17vw,250px);margin:0}
+.hero h1 span{display:block;-webkit-text-stroke:2px var(--text);color:transparent}
+.hero p{max-width:46ch;color:var(--mute);margin:28px 0 0;font-size:18px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.door{background:var(--bg);padding:6vh 5vw;display:flex;flex-direction:column;gap:14px;min-height:300px;justify-content:flex-end;position:relative;overflow:hidden;transition:background .25s}
+.door:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,106,19,.16),transparent 60%);opacity:0;transition:opacity .3s}
+.door:hover:before{opacity:1}
+.door h2{font-size:clamp(44px,7vw,96px);margin:0;position:relative}
+.door p{margin:0;color:var(--mute);max-width:36ch;position:relative}
+.door b{color:var(--acc);font-weight:600;position:relative}
+.sec{padding:9vh 5vw 2vh}
+.sec h3,.contact h3{font-size:clamp(34px,5vw,64px);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);transition:transform .15s,border-color .2s;transform-style:preserve-3d;will-change:transform;animation:in .5s both}
+.card:hover{border-color:var(--acc)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.th{aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--g1),#0d0d0e 75%)}
+.th img,.th video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.th video{opacity:0;transition:opacity .3s}
+.card:hover .th video{opacity:1}
+.th:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 4px)}
+.play{position:relative;z-index:3;width:54px;height:54px;border:2px solid var(--text);border-radius:50%;display:grid;place-items:center;transition:.2s}
+.play:after{content:"";border-left:14px solid var(--text);border-block:9px solid transparent;margin-left:4px}
+.card:hover .play{background:var(--acc);border-color:var(--acc);transform:scale(1.1)}
+.tag{position:absolute;z-index:3;left:12px;bottom:10px;font-size:13px;background:rgba(0,0,0,.65);padding:2px 8px}
+.plat{position:absolute;z-index:3;right:12px;top:10px;font-size:12px;color:var(--text);text-shadow:0 1px 4px #000}
+.meta{padding:14px 16px 18px}
+.meta h4{margin:0 0 4px;font-size:17px;font-weight:600}
+.meta p{margin:0;color:var(--mute);font-size:14px}
+.card.off{opacity:.5;pointer-events:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.chip{font:500 14px Archivo,sans-serif;color:var(--mute);background:none;border:1px solid var(--line);padding:8px 16px;cursor:pointer;transition:.2s}
+.chip:hover{color:var(--text);border-color:var(--text)}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#111}
+.head{padding:8vh 5vw 4vh}
+.head h1{font-size:clamp(56px,11vw,150px);margin:0 0 14px}
+.head p{color:var(--mute);max-width:52ch;margin:0}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:22px 0}
+.marq div{display:flex;gap:60px;width:max-content;animation:m 28s linear infinite;font-size:clamp(28px,4vw,48px);color:var(--mute)}
+.marq:hover div{animation-play-state:paused}
+.marq img{height:44px;filter:grayscale(1) brightness(1.6)}
+@keyframes m{to{transform:translateX(-50%)}}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc div{background:var(--bg);padding:26px;transition:background .2s}
+.svc div:hover{background:var(--panel)}
+.svc h4{margin:0 0 6px;font-size:22px}
+.svc p{margin:0;color:var(--mute);font-size:15px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
+.about p{color:var(--mute);max-width:56ch;margin:0}
+.contact{padding:12vh 5vw 8vh}
+.contact a.big{display:block;font-size:clamp(34px,8vw,120px);margin-bottom:26px;overflow-wrap:anywhere;transition:color .2s}
+.contact a.big:hover{color:var(--acc)}
+.soc{display:flex;gap:22px;flex-wrap:wrap;color:var(--mute)}
+.soc a:hover{color:var(--text)}
+footer{padding:26px 5vw;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
+#glow{position:fixed;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,106,19,.07),transparent 65%);z-index:0}
+main,header,footer{position:relative;z-index:1}
+@media(max-width:760px){.doors,.about{grid-template-columns:1fr}nav{gap:14px;font-size:13px}#glow{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<header>
+  <a href="#/" class="logo d" aria-label="Home">AM</a>
+  <nav>
+    <a href="#/filmmaker" data-r="filmmaker">Filmmaker</a>
+    <a href="#/camera" data-r="camera">Camera Dept</a>
+    <a href="#/contatti" data-r="contatti">Contatti</a>
+  </nav>
+</header>
+<main id="app"></main>
+<footer id="foot"></footer>
+
+<script>
+let D,app=document.getElementById("app");
+const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+const plat=u=>/instagram/.test(u)?"Instagram":/youtu/.test(u)?"YouTube":/vimeo/.test(u)?"Vimeo":"";
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const card=(w,i)=>`<a class="card ${w.url?"":"off"}" style="animation-delay:${i*60}ms" ${w.url?`href="${esc(w.url)}" target="_blank" rel="noopener"`:""}>
+ <div class="th" style="--g1:hsl(${hue(w.cat)} 45% 22%)">${w.thumb?`<img src="${esc(w.thumb)}" alt="" loading="lazy">`:""}${w.preview?`<video src="${esc(w.preview)}" muted loop playsinline preload="none"></video>`:""}
+ <span class="plat">${plat(w.url)}</span><span class="play"></span><span class="tag">${esc(w.cat)}</span></div>
+ <div class="meta"><h4>${esc(w.title)}</h4><p>${esc(w.role)}</p></div></a>`;
+const contact=()=>`<section class="contact" id="contatti"><h3 class="d">Lavoriamo insieme</h3>
+ <a class="big d" href="mailto:${esc(D.site.email)}">${esc(D.site.email)}</a>
+ <div class="soc"><a href="${esc(D.site.instagram)}" target="_blank" rel="noopener">Instagram</a><a href="${esc(D.site.behance)}" target="_blank" rel="noopener">Behance</a></div></section>`;
+const clients=()=>{const it=D.clients.map(c=>typeof c==="string"?`<span class="d">${esc(c)}</span>`:`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`).join("");return `<div class="marq"><div>${it}${it}</div></div>`};
+
+function home(){
+ const [a,b]=D.site.name.split(" ");
+ return `<section class="hero"><h1 class="d" id="h1" data-t="${esc(a)}">${esc(a)}<span id="h1b" data-t="${esc(b||"")}">${esc(b||"")}</span></h1><p>${esc(D.site.tagline)}</p></section>
+ <div class="doors">
+  <a class="door" href="#/filmmaker"><h2 class="d">Filmmaker<br>Camera Op.</h2><p>Riprese e video per eventi, concerti, sport, automotive, adv, moda e videoclip.</p><b>Vedi i lavori</b></a>
+  <a class="door" href="#/camera"><h2 class="d">Camera<br>Department</h2><p>1° e 2° assistente camera su set: fuoco, gestione e cura dell'attrezzatura.</p><b>Vedi i lavori</b></a></div>
+ <section class="sec"><h3 class="d">Selezione</h3><div class="grid">${D.works.filter(w=>w.best).map(card).join("")}</div></section>
+ <section class="sec"><h3 class="d">Servizi</h3><div class="svc">${D.services.map(s=>`<div><h4>${esc(s.t)}</h4><p>${esc(s.d)}</p></div>`).join("")}</div></section>
+ <section class="sec"><h3 class="d">Hanno lavorato con me</h3></section>${clients()}
+ <section class="sec"><div class="about"><h3 class="d">Chi sono</h3><p>${esc(D.site.bio)}</p></div></section>${contact()}`;
+}
+function area(a){
+ const t=a==="filmmaker"?["Filmmaker & Camera Op.","Scegli il settore. Riprese, video e montaggio per ogni contesto."]:["Camera Department","1AC e 2AC su set. Scegli il ruolo."];
+ return `<section class="head"><h1 class="d">${t[0]}</h1><p>${t[1]}</p></section><section class="sec" style="padding-top:0">
+ <div class="chips" id="chips">${["Tutti",...D.categories[a]].map((c,i)=>`<button class="chip ${i?"":"on"}" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div><div class="grid" id="g"></div></section>${contact()}`;
+}
+function fill(a,c){document.getElementById("g").innerHTML=D.works.filter(w=>w.area===a&&(c==="Tutti"||w.cat===c)).map(card).join("")||'<p style="color:var(--mute)">Nessun lavoro in questa categoria, per ora.</p>'}
+
+/* effetti */
+function scramble(el){ // una sola sequenza all'ingresso: il nome si "decodifica"
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+ const nodes=[...el.querySelectorAll("#h1,#h1b")];
+ nodes.forEach(n=>{const t=n.dataset.t,tn=n.firstChild;let i=0;const ch="ABCDEFGHIJKLMNOPQRSTUVWXYZ#/<>";
+  const id=setInterval(()=>{tn.nodeValue=t.split("").map((c,k)=>k<i?c:ch[Math.random()*ch.length|0]).join("");if(i++>=t.length){tn.nodeValue=t;clearInterval(id)}},60)});
+}
+document.addEventListener("mousemove",e=>{
+ const g=document.getElementById("glow");g.style.left=e.clientX+"px";g.style.top=e.clientY+"px";
+ const d=e.target.closest?.(".door");if(d){const r=d.getBoundingClientRect();d.style.setProperty("--mx",e.clientX-r.left+"px");d.style.setProperty("--my",e.clientY-r.top+"px")}
+ const c=e.target.closest?.(".card");document.querySelectorAll(".card").forEach(k=>{if(k!==c)k.style.transform=""});
+ if(c&&!matchMedia("(prefers-reduced-motion:reduce)").matches){const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`}
+});
+document.addEventListener("mouseover",e=>{const v=e.target.closest?.(".card")?.querySelector("video");if(v)v.play().catch(()=>{})});
+document.addEventListener("mouseout",e=>{const v=e.target.closest?.(".card")?.querySelector("video");if(v){v.pause();v.currentTime=0}});
+
+function route(){
+ const h=location.hash.replace("#/","").replace("#","");
+ const r=h==="filmmaker"||h==="camera"?h:h==="contatti"?"contatti":"home";
+ app.innerHTML=r==="home"||r==="contatti"?home():area(r);
+ document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===r));
+ if(r==="filmmaker"||r==="camera"){fill(r,"Tutti");scrollTo(0,0);
+  document.getElementById("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===b));fill(r,b.dataset.c)}}
+ else if(r==="contatti")document.getElementById("contatti").scrollIntoView();
+ else{scrollTo(0,0);scramble(app)}
+}
+fetch("data.json?"+Date.now()).then(r=>r.json()).then(j=>{D=j;document.getElementById("foot").textContent="© "+D.site.name;addEventListener("hashchange",route);route()})
+ .catch(()=>app.innerHTML='<p style="padding:10vh 5vw">Impossibile caricare data.json. Se hai aperto il file dal computer, avvia un piccolo server locale (vedi README) oppure pubblica il sito.</p>');
+</script>
+</body>
+</html>
