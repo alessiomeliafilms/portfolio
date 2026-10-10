@@ -33,12 +33,13 @@
     ]
   },
   "clients": [
-    "Cliente 1",
-    "Cliente 2",
-    "Cliente 3",
-    "Cliente 4",
-    "Cliente 5",
-    "Cliente 6"
+    "Salone del Mobile",
+    "Quattroruote",
+    "Mercedes",
+    "Artist First",
+    "Disney Plus",
+    "Enel Italia",
+    "Giro d'Italia"
   ],
   "works": [
     {
