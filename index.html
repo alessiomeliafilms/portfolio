@@ -16,16 +16,18 @@ a{color:inherit;text-decoration:none}
 .d{font-family:'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:.01em}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 header{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0)) 5vw 14px;background:rgba(13,13,14,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.logo{width:42px;height:42px;border:2px solid var(--text);display:grid;place-items:center;font-size:24px;position:relative;clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%);transition:.25s}
-.logo:after{content:"";position:absolute;right:0;bottom:0;width:10px;height:10px;background:var(--acc)}
-.logo:hover{background:var(--text);color:var(--bg)}
+.logo{position:relative;width:42px;height:42px;margin-left:10px;display:grid;place-items:center;font-size:23px;color:#fff;border-radius:50%}
+.logo:before{content:"";position:absolute;width:86%;height:86%;left:-16%;top:12%;border-radius:50%;background:radial-gradient(circle,rgba(236,236,234,.1),rgba(236,236,234,.28) 68%,rgba(236,236,234,0) 100%);transition:.3s}
+.logo:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(255,106,19,.6) 0,rgba(255,106,19,.88) 62%,rgba(255,170,100,1) 76%,rgba(255,106,19,0) 100%);box-shadow:0 0 18px rgba(255,106,19,.35);transition:.3s;animation:cb 3s ease-in-out infinite}
+.logo b{position:relative;z-index:2;font-weight:900}
+.logo:hover:after{background:var(--acc);animation:none;box-shadow:0 0 26px rgba(255,106,19,.7)}.logo:hover:before{transform:translateX(-4px)}
 .rt{display:flex;align-items:center;gap:26px}
 nav{display:flex;gap:26px;font-size:14px;font-weight:500}
 nav a{color:var(--mute);padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
 nav a:hover,nav a.on{color:var(--text);border-color:var(--acc)}
 .lg{display:flex}
 .lg button{font:500 12px var(--mono);letter-spacing:.1em;background:none;color:var(--mute);border:1px solid var(--line);padding:6px 9px;cursor:pointer}
-.lg button+button{border-left:0}
+.lg button+button{border-left:0}.lg button:not([aria-pressed=true]):hover{color:var(--acc)}
 .lg button[aria-pressed=true]{color:#111;background:var(--text);border-color:var(--text)}
 main,footer{position:relative;z-index:1}
 .hero{min-height:calc(100svh - 70px);display:flex;flex-direction:column;padding:6vh 5vw 5vh}
@@ -38,8 +40,22 @@ main,footer{position:relative;z-index:1}
 .ttl .sharp{position:relative;-webkit-mask-image:radial-gradient(circle var(--r,180px) at var(--mx,30%) var(--my,50%),#000 55%,transparent 100%);mask-image:radial-gradient(circle var(--r,180px) at var(--mx,30%) var(--my,50%),#000 55%,transparent 100%)}
 .hero .lead{max-width:46ch;margin:26px 0 0;font-size:clamp(17px,2vw,21px)}
 .hero .foot{margin-top:auto;padding-top:48px;display:flex;justify-content:space-between;gap:20px;font:400 13px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
-.foot .sc{display:flex;align-items:center;gap:14px}
-.foot .sc i{width:44px;height:1px;background:var(--mute)}
+.foot .arr{display:block;color:var(--text);margin:-18px 0 0}
+.arr .ln{stroke-dasharray:26;animation:ln 2.2s cubic-bezier(.6,0,.3,1) infinite}.arr .hd{animation:hd 2.2s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes ln{0%{stroke-dashoffset:26}55%,100%{stroke-dashoffset:0}}
+@keyframes hd{0%{transform:translateY(-12px);opacity:0}45%{opacity:1}60%,100%{transform:translateY(0);opacity:1}}
+html.cc,html.cc *{cursor:none!important}
+#cur{position:fixed;left:0;top:0;z-index:10000;pointer-events:none;width:0;height:0;opacity:0;transition:opacity .25s}
+#cur.on{opacity:1}
+#cur .i{position:absolute;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;--c:236,236,234;
+ background:radial-gradient(circle,rgba(var(--c),.3) 0,rgba(var(--c),.5) 55%,rgba(var(--c),.95) 72%,rgba(var(--c),0) 100%);box-shadow:0 0 16px rgba(var(--c),.35);animation:cb 2.4s ease-in-out infinite;transition:background-color .2s}
+#cur.dn .i{background:radial-gradient(circle,rgba(255,106,19,.95) 0,rgba(255,106,19,1) 100%);box-shadow:0 0 22px rgba(255,106,19,.8);animation:none}
+@keyframes cb{0%,100%{opacity:.7;filter:blur(.4px)}45%{opacity:1;filter:blur(0)}60%{opacity:.85}}
+.rip{position:fixed;z-index:9999;pointer-events:none;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;border:2px solid #ff6a13;background:rgba(255,106,19,.35);animation:rip .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rip{from{transform:scale(1);opacity:.9}to{transform:scale(4.2);opacity:0}}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+#grain{position:fixed;inset:-80px;z-index:3;pointer-events:none;opacity:.07;mix-blend-mode:overlay;animation:grain .9s steps(1) infinite}
+@keyframes grain{0%{transform:translate(0,0)}17%{transform:translate(-37px,23px)}33%{transform:translate(29px,-41px)}50%{transform:translate(-18px,-12px)}67%{transform:translate(44px,31px)}83%{transform:translate(-26px,38px)}}
 #hud{position:fixed;inset:0;z-index:2;pointer-events:none;font-family:var(--mono)}
 #hud .v{position:absolute;top:0;bottom:0;width:1px;background:rgba(255,255,255,.06)}
 #hud .hh{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,255,.06)}
@@ -67,25 +83,33 @@ main,footer{position:relative;z-index:1}
 .shd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;margin-bottom:28px}.shd h3{margin:0!important}
 .vw{display:flex;align-items:center;font:400 12px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}.vw span{margin-right:14px}
 .vw button{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:none;color:var(--mute);border:1px solid var(--line);padding:10px 14px;cursor:pointer;transition:.2s}
-.vw button+button{border-left:0}.vw button:hover{color:var(--text)}.vw button[aria-pressed=true]{background:var(--text);color:#111;border-color:var(--text)}
+.vw button+button{border-left:0}.vw button:not([aria-pressed=true]):hover{color:var(--acc);border-color:var(--acc)}.vw button[aria-pressed=true]{background:var(--text);color:#111;border-color:var(--text)}
 .ov{display:none}
 .grid.cp{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+@media(min-width:900px){.grid.cp{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}}
 .cp .th{aspect-ratio:9/13}
 .cp .tag,.cp .plat{display:none}
 .cp .ov{display:flex;flex-direction:column;gap:4px;position:absolute;z-index:3;left:0;right:0;bottom:0;padding:48px 12px 12px;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);pointer-events:none}
 .ov b{font:900 clamp(17px,1.6vw,22px)/1 'Big Shoulders Display',Impact,'Arial Narrow',sans-serif;text-transform:uppercase}
-.ov em,.ov u{font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;text-decoration:none}
-.ov u{color:var(--mute)}
+.ov em{font:500 11px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;font-style:normal;color:var(--mute)}
+.ov u{font:700 11px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--acc)}
 .cp .play{display:none}
-.cp .ov b{font-size:clamp(16px,1.3vw,19px);overflow-wrap:anywhere}
+.cp .ov b{font-size:clamp(18px,2vw,30px);line-height:.95;overflow-wrap:anywhere}
+.cp .ov{padding:64px 16px 16px;gap:6px}
+.cp .ov em{font-size:12px;margin-top:4px}
 .cp .more{font-size:11px;white-space:nowrap}
 .cp .meta{padding:8px 12px 10px}.cp .meta h4,.cp .meta p{display:none}.cp .more{margin-top:0}
+.grid.bento:not(.cp){grid-auto-flow:dense}
+.grid.bento:not(.cp) .card:first-child{grid-column:span 2;grid-row:span 2}
+.grid.bento:not(.cp) .card:first-child .th{aspect-ratio:auto;flex:1 1 auto;min-height:260px}
+.grid.bento:not(.cp) .card:first-child .meta h4{font:900 clamp(26px,3vw,40px)/1 'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase}
+@media(max-width:760px){.grid.bento:not(.cp) .card:first-child{grid-column:auto;grid-row:auto}.grid.bento:not(.cp) .card:first-child .th{aspect-ratio:16/9;min-height:0}}
 .sec h3,.contact h3{font-size:clamp(34px,5vw,64px);margin:0 0 28px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
-.card{display:block;background:var(--panel);border:1px solid var(--line);transition:transform .15s,border-color .2s;transform-style:preserve-3d;will-change:transform;animation:in .5s both}
+.card{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);position:relative;transition:transform .15s,border-color .2s;transform-style:preserve-3d;will-change:transform;animation:in .5s both}
 .card:hover{border-color:var(--acc)}
 @keyframes in{from{opacity:0;transform:translateY(14px)}}
-.th{aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--g1),#0d0d0e 75%)}
+.th{aspect-ratio:16/9;flex:none;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--g1),#0d0d0e 75%)}
 .th img,.th video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .th video{opacity:0;transition:opacity .3s}
 .card:hover .th video{opacity:1}
@@ -93,9 +117,12 @@ main,footer{position:relative;z-index:1}
 .play{position:relative;z-index:3;width:54px;height:54px;border:2px solid var(--text);border-radius:50%;display:grid;place-items:center;transition:.2s}
 .play:after{content:"";border-left:14px solid var(--text);border-block:9px solid transparent;margin-left:4px}
 .card:hover .play{background:var(--acc);border-color:var(--acc);transform:scale(1.1)}
-.tag{position:absolute;z-index:3;left:12px;bottom:10px;font-size:13px;background:rgba(0,0,0,.65);padding:2px 8px}
+.tag{position:absolute;z-index:3;left:12px;bottom:10px;font:700 12px Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);background:rgba(0,0,0,.7);padding:4px 9px}
 .plat{position:absolute;z-index:3;right:12px;top:10px;font-size:12px;color:var(--text);text-shadow:0 1px 4px #000}
 .th.off{opacity:.55}
+.th img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card.ph .play{display:none}
+@media(hover:hover){.card.ph:hover .th img{transform:scale(1.07)}}
 .meta{padding:14px 16px 16px}
 .meta h4{margin:0 0 4px;font-size:17px;font-weight:600}
 .meta p{margin:0;color:var(--mute);font-size:14px}
@@ -106,15 +133,20 @@ main,footer{position:relative;z-index:1}
 .head p{color:var(--mute);max-width:52ch;margin:0}
 .ctl{display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;align-items:center;margin:0 0 28px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+.gc{align-items:center;margin:-12px 0 26px}.gc .gl{font:600 12px Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-right:6px}
 .chip{font:500 14px Archivo,sans-serif;color:var(--mute);background:none;border:1px solid var(--line);padding:8px 16px;cursor:pointer;transition:.2s}
 .chip:hover{color:var(--text);border-color:var(--text)}
 .chip.on{background:var(--acc);border-color:var(--acc);color:#111}
 .tools{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--mute)}
 .tools select{font:500 14px Archivo,sans-serif;background:var(--panel);color:var(--text);border:1px solid var(--line);padding:8px 10px}
 .marq{overflow:hidden;border-block:1px solid var(--line);padding:22px 0;background:var(--bg)}
-.marq div{display:flex;align-items:center;gap:34px;width:max-content;animation:m 32s linear infinite;font-size:clamp(28px,4vw,48px);color:var(--mute)}
-.marq:hover div{animation-play-state:paused}
-.marq i{font-style:normal;color:var(--acc);font-size:.6em}
+.marq{display:flex;flex-direction:column;gap:30px}
+.marq div{display:flex;align-items:center;gap:34px;width:max-content;font-size:clamp(28px,4vw,48px);color:var(--mute);animation:m 55s linear infinite}
+.marq div+div{animation:m2 65s linear infinite}
+.marq .d{transition:color .2s}
+@media(hover:hover){.marq .d:hover{color:var(--acc)}}
+@keyframes m2{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.marq i{display:inline-block;width:2px;height:1em;background:var(--acc);flex:none}
 .marq img{height:44px;filter:grayscale(1) brightness(1.6)}
 @keyframes m{to{transform:translateX(-50%)}}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
@@ -123,30 +155,31 @@ main,footer{position:relative;z-index:1}
 .contact a.big{display:block;font-size:clamp(14px,4.8vw,84px);margin-bottom:26px;overflow-wrap:anywhere;transition:color .2s}
 .contact a.big:hover{color:var(--acc)}
 .soc{display:flex;gap:22px;flex-wrap:wrap;color:var(--mute)}
-.soc a:hover{color:var(--text)}
+.soc a{transition:color .2s}.soc a:hover{color:var(--acc)}
 footer{padding:26px 5vw;border-top:1px solid var(--line);color:var(--mute);font-size:13px;background:var(--bg)}
 .wk{padding:7vh 5vw 0;background:var(--bg)}
-.back{display:inline-block;color:var(--mute);font-size:14px;margin-bottom:26px}
-.back:hover{color:var(--acc)}
+.crumb{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font:600 13px Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:26px}
+.crumb a{color:var(--mute);transition:color .2s;padding:4px 0}.crumb a:hover{color:var(--acc)}.crumb a.cat{color:var(--acc)}.crumb a.cat:hover{color:var(--text)}.crumb .all{margin-left:auto;letter-spacing:.1em}.crumb i{font-style:normal;color:var(--line)}
 .wk h1{font-size:clamp(44px,10vw,150px);margin:0;overflow-wrap:anywhere}
 .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:26px 20px;border-block:1px solid var(--line);margin-top:6vh;padding:30px 0}
-.spec small{display:block;font:400 12px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
-.spec span{font:400 14px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.spec small{display:block;font:500 12px Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.spec span{font:600 15px/1.35 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}
 .back-stage{max-width:62ch;margin:6vh 0 0}
 .back-stage h3{font-size:clamp(28px,4vw,44px);margin:0 0 14px}
 .back-stage p{color:var(--mute);margin:0 0 12px}
 .emb{position:relative;aspect-ratio:16/9;margin-top:6vh;background:var(--panel);border:1px solid var(--line)}
 .emb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .cta{display:flex;justify-content:center;padding:7vh 0 4vh}
-.cta a{border:1px solid var(--text);padding:20px 38px;font:400 14px var(--mono);letter-spacing:.2em;text-transform:uppercase;transition:.2s}
+.cta a{border:1px solid var(--text);padding:20px 38px;font:600 14px Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;transition:.2s}
 .cta a:hover{background:var(--acc);border-color:var(--acc);color:#111}
 @media(max-width:760px){.doors,.about{grid-template-columns:1fr}.rt{gap:12px}nav{gap:12px;font-size:13px}.hero .foot{letter-spacing:.14em;font-size:11px}#hud .rec{left:48px}#hud .fps{right:48px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ttl .blur{display:none}.ttl .sharp{-webkit-mask-image:none;mask-image:none}}
+@media(max-width:460px){#hud .fps{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}#grain{display:none}}
 </style>
 </head>
 <body>
 <header>
-  <a href="#/" class="logo d" aria-label="Home">AM</a>
+  <a href="#/" class="logo" aria-label="Home"><b class="d">AM</b></a>
   <div class="rt">
     <nav>
       <a href="#/filmmaker" data-r="filmmaker" data-k="nav_f"></a>
@@ -161,7 +194,9 @@ footer{padding:26px 5vw;border-top:1px solid var(--line);color:var(--mute);font-
 
 <script>
 let D,app=document.getElementById("app");
-const S={c:"Tutti",sort:"feat",view:"wide"};
+const GEARS=[["ARRI",/arri|alexa/i],["RED",/\bred\b|komodo|raptor|dragon/i],["Sony",/sony|fx3|fx6|a7|a6300|g-master/i],["Canon",/canon|r5c|c400|\bcn\b/i],["Blackmagic",/blackmagic|pixis|ursa|bmpcc/i]];
+const gearOf=w=>GEARS.filter(([n,r])=>r.test(w.gear||"")).map(x=>x[0]);
+const S={g:"Tutti",c:"Tutti",sort:"feat",view:"wide"};
 const store={get(k){try{return localStorage.getItem(k)}catch{return null}},set(k,v){try{localStorage.setItem(k,v)}catch{}}};
 let lang=store.get("am_lang");if(lang!=="en")lang="it";
 S.view=store.get("am_view")==="cp"?"cp":"wide";
@@ -169,26 +204,27 @@ S.view=store.get("am_view")==="cp"?"cp":"wide";
 const I={
  it:{nav_f:"Filmmaker",nav_c:"Camera Dept",nav_k:"Contatti",
   door_f:"Filmmaker<br>Camera Op.",door_f_p:"Riprese, regia e montaggio per eventi, concerti, sport, automotive, adv, moda e videoclip.",
-  door_c:"Camera<br>Department",door_c_p:"1° e 2° assistente camera su set: fuoco, gestione e cura dell'attrezzatura.",see:"Vedi i lavori",
+  door_c:"Camera<br>Department",door_c_p:"Operatore di camera, 1° e 2° assistente su set: inquadratura, fuoco e cura dell'attrezzatura.",see:"Vedi i lavori",
   sel:"Selezione",clients:"Hanno lavorato con me",about:"Chi sono",together:"Lavoriamo insieme",
-  head_f:"Filmmaker & Camera Op.",head_f_p:"Scegli il settore. Riprese, regia e montaggio per ogni contesto.",head_c:"Camera Department",head_c_p:"1AC e 2AC su set. Scegli il ruolo.",
-  all:"Tutti",sort:"Ordina",s_feat:"In evidenza",s_new:"Più recenti",s_old:"Più vecchi",s_cust:"Ordine personalizzato",view:"Vista",v_cp:"Compatta",v_wide:"16:9",
-  none:"Nessun lavoro in questa categoria, per ora.",page:"Scheda del lavoro →",back:"← Tutti i lavori",client:"Cliente",year:"Anno",role:"Ruolo",cat:"Settore",gear:"Attrezzatura",
+  head_f:"Filmmaker & Camera Op.",head_f_p:"Scegli il settore. Riprese, regia e montaggio per ogni contesto.",head_c:"Camera Department",head_c_p:"Operatore di camera, 1AC e 2AC su set. Scegli il ruolo.",
+  all:"Tutti i lavori",sort:"Ordina",s_feat:"In evidenza",s_new:"Più recenti",s_old:"Più vecchi",s_cust:"Aggiunti di recente",view:"Vista",v_cp:"Compatta",v_wide:"16:9",
+  none:"Nessun lavoro in questa categoria, per ora.",page:"Scheda del lavoro →",back:"← Tutti i lavori",client:"Cliente",prod:"Produzione",year:"Anno",role:"Ruolo",cat:"Settore",gear:"Attrezzatura",
   backstage:"Backstage",watch:"Guarda il video",watchOn:"Guarda su ",scroll:"Scroll",pick:"Seleziona la lingua · Select language",tbd:"link da aggiungere",watchLbl:"Guarda il video: ",clientsLbl:"Clienti"},
  en:{nav_f:"Filmmaker",nav_c:"Camera Dept",nav_k:"Contact",
   door_f:"Filmmaker<br>Camera Op.",door_f_p:"Shooting, direction and editing for events, concerts, sport, automotive, adv, fashion and music videos.",
-  door_c:"Camera<br>Department",door_c_p:"1st and 2nd assistant camera on set: focus, camera management and gear care.",see:"See the work",
+  door_c:"Camera<br>Department",door_c_p:"Camera operator, 1st and 2nd assistant on set: framing, focus and gear care.",see:"See the work",
   sel:"Selected work",clients:"Worked with",about:"About",together:"Let's work together",
-  head_f:"Filmmaker & Camera Op.",head_f_p:"Pick a field. Shooting, direction and editing for every context.",head_c:"Camera Department",head_c_p:"1AC and 2AC on set. Pick a role.",
-  all:"All",sort:"Sort",s_feat:"Featured first",s_new:"Newest first",s_old:"Oldest first",s_cust:"Custom order",view:"View",v_cp:"Compact",v_wide:"16:9",
-  none:"No work in this category yet.",page:"Project page →",back:"← All work",client:"Client",year:"Year",role:"Role",cat:"Field",gear:"Gear",
+  head_f:"Filmmaker & Camera Op.",head_f_p:"Pick a field. Shooting, direction and editing for every context.",head_c:"Camera Department",head_c_p:"Camera operator, 1AC and 2AC on set. Pick a role.",
+  all:"All work",sort:"Sort",s_feat:"Featured first",s_new:"Newest first",s_old:"Oldest first",s_cust:"Recently added",view:"View",v_cp:"Compact",v_wide:"16:9",
+  none:"No work in this category yet.",page:"Project page →",back:"← All work",client:"Client",prod:"Production",year:"Year",role:"Role",cat:"Field",gear:"Gear",
   backstage:"Backstage",watch:"Watch the video",watchOn:"Watch on ",scroll:"Scroll",pick:"Seleziona la lingua · Select language",tbd:"link to add",watchLbl:"Watch the video: ",clientsLbl:"Clients"}
 };
-const CAT={Events:["Eventi","Events"],Concerts:["Concerti","Concerts"],"Music Videos":["Videoclip","Music videos"],"Food & Beverage":["Food & Beverage","Food & Beverage"]};
+const CAT={Events:["Eventi","Events"],Concerts:["Concerti","Concerts"],"Music Videos":["Videoclip","Music videos"],"Food & Beverage":["Food & Beverage","Food & Beverage"],"Camera Operator":["Operatore di camera","Camera Operator"],"1AC":["1° assistente camera (1AC)","1st Assistant Camera (1AC)"],"2AC":["2° assistente camera (2AC)","2nd Assistant Camera (2AC)"]};
 const T=k=>I[lang][k]??I.it[k]??k;
 const L=v=>v&&typeof v==="object"?(v[lang]||v.it||v.en||""):(v??"");
 const catName=c=>CAT[c]?CAT[c][lang==="it"?0:1]:c;
 const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+const NT=matchMedia("(hover:hover) and (pointer:fine)").matches?' target="_blank" rel="noopener"':' rel="noopener"';
 const plat=u=>/instagram/.test(u)?"Instagram":/youtu/.test(u)?"YouTube":/vimeo/.test(u)?"Vimeo":"";
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
@@ -198,27 +234,27 @@ const card=(w,i)=>{
  const inner=`${w.thumb?`<img src="${esc(w.thumb)}" alt="" loading="lazy">`:""}${w.preview?`<video src="${esc(w.preview)}" muted loop playsinline preload="none"></video>`:""}
  <span class="plat">${plat(w.url)||(w.url?"":T("tbd"))}</span><span class="play"></span><span class="tag">${esc(catName(w.cat))}</span>
  <span class="ov"><b>${esc(w.title)}</b><em>${esc(sub)}</em><u>${esc(catName(w.cat))}</u></span>`;
- const th=w.url?`<a class="th" href="${esc(w.url)}" target="_blank" rel="noopener" aria-label="${esc(T("watchLbl")+w.title)}" style="--g1:hsl(${hue(w.cat)} 45% 22%)">${inner}</a>`
+ const th=w.url?`<a class="th" href="${esc(w.url)}"${NT} aria-label="${esc(T("watchLbl")+w.title)}" style="--g1:hsl(${hue(w.cat)} 45% 22%)">${inner}</a>`
   :`<div class="th off" style="--g1:hsl(${hue(w.cat)} 45% 22%)">${inner}</div>`;
- return `<article class="card" style="animation-delay:${i*60}ms">${th}
- <div class="meta"><h4>${esc(w.title)}</h4><p>${esc(sub)}</p><p>${esc(L(w.role))}</p><a class="more" href="#/work/${esc(w.id)}">${T("page")}</a></div></article>`;
+ return `<article class="card${w.kind==="photo"?" ph":""}" style="animation-delay:${i*60}ms">${th}
+ <div class="meta"><h4>${esc(w.title)}</h4><p>${esc(sub)}</p><p>${esc(w.area==="camera"&&w.gear?w.gear:L(w.role))}</p><a class="more" href="#/work/${esc(w.id)}">${T("page")}</a></div></article>`;
 };
 const viewToggle=()=>`<div class="vw" role="group" aria-label="${T("view")}"><span>${T("view")}</span><button data-v="cp" aria-pressed="${S.view==="cp"}">${T("v_cp")}</button><button data-v="wide" aria-pressed="${S.view==="wide"}">${T("v_wide")}</button></div>`;
 const contact=()=>`<section class="contact" id="contatti"><h3 class="d">${T("together")}</h3>
  <a class="big d" href="mailto:${esc(D.site.email)}">${esc(D.site.email)}</a>
  <div class="soc"><a href="${esc(D.site.instagram)}" target="_blank" rel="noopener">Instagram</a></div></section>`;
-const clients=()=>{const it=D.clients.map(c=>typeof c==="string"?`<span class="d">${esc(c)}</span>`:`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`).join("<i>●</i>");return `<div class="marq" aria-label="${T("clientsLbl")}"><div>${it}<i>●</i>${it}<i>●</i></div></div>`};
+const clients=()=>{const rv=[...D.clients].reverse().map(c=>typeof c==="string"?`<span class="d">${esc(c)}</span>`:`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`).join("<i></i>");const it2=rv;const it=D.clients.map(c=>typeof c==="string"?`<span class="d">${esc(c)}</span>`:`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`).join("<i></i>");return `<div class="marq" aria-label="${T("clientsLbl")}"><div>${it}<i></i>${it}<i></i></div><div aria-hidden="true">${it2}<i></i>${it2}<i></i></div></div>`};
 
 function home(){
  const [a,...b]=D.site.name.split(" "),bn=b.join(" ");
- return `<section class="hero"><div class="ttl"><div class="d blur" aria-hidden="true"><span>${esc(a)}</span><span class="b">${esc(bn)}</span></div>
-  <h1 class="d sharp"><span data-t="${esc(a)}">${esc(a)}</span><span class="b" data-t="${esc(bn)}">${esc(bn)}</span></h1></div>
+ return `<section class="hero"><div class="ttl">
+  <h1 class="d"><span data-t="${esc(a)}">${esc(a)}</span><span class="b" data-t="${esc(bn)}">${esc(bn)}</span></h1></div>
   <p class="lead">${esc(L(D.site.tagline))}</p>
-  <div class="foot"><span>${esc(L(D.site.location))}</span><span class="sc">${T("scroll")}<i></i></span></div></section>
+  <div class="foot"><span>${esc(L(D.site.location))}</span><span class="arr" aria-hidden="true"><svg viewBox="0 0 56 56" width="56" height="56" fill="none"><circle cx="28" cy="28" r="27" stroke="currentColor" stroke-opacity=".35"/><path class="ln" d="M28 12v26" stroke="currentColor" stroke-width="1.5"/><path class="hd" d="M20 31l8 9 8-9" stroke="#ff6a13" stroke-width="2" stroke-linecap="square"/></svg></span></div></section>
  <div class="doors">
   <a class="door" href="#/filmmaker"><h2 class="d">${T("door_f")}</h2><p>${T("door_f_p")}</p><b>${T("see")}</b></a>
   <a class="door" href="#/camera"><h2 class="d">${T("door_c")}</h2><p>${T("door_c_p")}</p><b>${T("see")}</b></a></div>
- <section class="sec"><div class="shd"><h3 class="d">${T("sel")}</h3>${viewToggle()}</div><div class="grid${S.view==="cp"?" cp":""}">${D.works.filter(w=>w.best).map(card).join("")}</div></section>
+ <section class="sec"><div class="shd"><h3 class="d">${T("sel")}</h3>${viewToggle()}</div><div class="grid bento${S.view==="cp"?" cp":""}">${D.works.filter(w=>w.best).map(card).join("")}</div></section>
  <section class="sec"><h3 class="d">${T("clients")}</h3></section>${clients()}
  <section class="sec"><div class="about"><h3 class="d">${T("about")}</h3><p>${esc(L(D.site.bio))}</p></div></section>${contact()}`;
 }
@@ -229,11 +265,15 @@ function area(a){
  <div class="ctl"><div class="chips" id="chips">${["Tutti",...D.categories[a]].map(c=>`<button class="chip ${c===S.c?"on":""}" data-c="${esc(c)}">${esc(c==="Tutti"?T("all"):catName(c))}</button>`).join("")}</div>
  <div class="tools"><label>${T("sort")} <select id="sort"><option value="feat">${T("s_feat")}</option><option value="new">${T("s_new")}</option><option value="old">${T("s_old")}</option><option value="custom">${T("s_cust")}</option></select></label>
  ${viewToggle()}</div></div>
- <div class="grid" id="g"></div></section>${contact()}`;
+ ${gchips(a)}<div class="grid" id="g"></div></section>${contact()}`;
 }
+function gchips(a){
+ if(a!=="camera")return "";
+ const br=GEARS.map(x=>x[0]).filter(n=>D.works.some(w=>w.area===a&&gearOf(w).includes(n)));if(!br.length)return "";
+ return `<div class="chips gc" id="gchips" aria-label="${lang==="it"?"Filtra per camera":"Filter by camera"}"><span class="gl">${lang==="it"?"Camera":"Camera"}</span>${["Tutti",...br].map(n=>`<button class="chip ${n===S.g?"on":""}" data-g="${esc(n)}">${n==="Tutti"?(lang==="it"?"Tutte":"All"):esc(n)}</button>`).join("")}</div>`}
 function fill(a){
  const idx=new Map(D.works.map((w,i)=>[w,i])),yr=w=>parseInt(w.year)||0;
- const Ls=D.works.filter(w=>w.area===a&&(S.c==="Tutti"||w.cat===S.c));
+ const Ls=D.works.filter(w=>w.area===a&&(S.c==="Tutti"||w.cat===S.c)&&(S.g==="Tutti"||gearOf(w).includes(S.g)));
  Ls.sort((x,y)=>S.sort==="feat"?(!!y.best-!!x.best)||idx.get(x)-idx.get(y):S.sort==="new"?(yr(y)-yr(x))||idx.get(x)-idx.get(y):S.sort==="old"?(yr(x)-yr(y))||idx.get(x)-idx.get(y):idx.get(x)-idx.get(y));
  const g=document.getElementById("g");g.className="grid"+(S.view==="cp"?" cp":"");
  g.innerHTML=Ls.map(card).join("")||`<p style="color:var(--mute)">${T("none")}</p>`;
@@ -244,50 +284,86 @@ function embed(u){
  m=u.match(/vimeo\.com\/(?:video\/)?(\d+)/);if(m)return `https://player.vimeo.com/video/${m[1]}`;return "";
 }
 function workPage(w){
- const back=w.area==="camera"?"#/camera":"#/filmmaker";
- const rows=[[T("client"),w.client],[T("year"),w.year],[T("role"),L(w.role)],[T("cat"),catName(w.cat)],[T("gear"),w.gear]].filter(r=>r[1]);
+ const cam=w.area==="camera",ar=cam?"camera":"filmmaker";
+ const crumb=`<nav class="crumb" aria-label="breadcrumb"><a href="#/${ar}">${cam?"Camera Department":"Filmmaker"}</a><i>/</i><a class="cat" href="#/${ar}/${encodeURIComponent(w.cat)}">${esc(catName(w.cat))}</a><a class="all" href="#/${ar}">${T("back")}</a></nav>`;
+ const rows=(cam?[[T("client"),w.client],[T("prod"),w.prod],[T("year"),w.year],[T("gear"),w.gear]]:[[T("client"),w.client],[T("prod"),w.prod],[T("year"),w.year],[T("role"),L(w.role)],[T("gear"),w.gear]]).filter(r=>r[1]);
  const em=embed(w.url||""),paras=L(w.desc).split(/\n+/).filter(Boolean);
- return `<section class="wk"><a class="back" href="${back}">${T("back")}</a><h1 class="d">${esc(w.title)}</h1>
+ return `<section class="wk">${crumb}<h1 class="d">${esc(w.title)}</h1>
  <div class="spec">${rows.map(r=>`<div><small>${esc(r[0])}</small><span>${esc(r[1])}</span></div>`).join("")}</div>
  ${em?`<div class="emb"><iframe src="${em}" title="${esc(w.title)}" loading="lazy" allowfullscreen></iframe></div>`:""}
  ${paras.length?`<div class="back-stage"><h3 class="d">${T("backstage")}</h3>${paras.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`:""}
- ${w.url?`<div class="cta"><a href="${esc(w.url)}" target="_blank" rel="noopener">${plat(w.url)?T("watchOn")+plat(w.url):T("watch")} →</a></div>`:'<div style="height:6vh"></div>'}</section>${contact()}`;
+ ${w.url?`<div class="cta"><a href="${esc(w.url)}"${NT}>${plat(w.url)?T("watchOn")+plat(w.url):T("watch")} →</a></div>`:'<div style="height:6vh"></div>'}</section>${contact()}`;
 }
 
-/* effetto hero: "fuoco" da cinepresa. Il nome è sfocato e si mette a fuoco dove punti il cursore;
-   scorrendo il fuoco si allarga fino a coprire tutto, poi l'interfaccia da mirino svanisce. */
-const fx={raf:0,hud:null,onMove:null,onResize:null};
-function stopFX(){cancelAnimationFrame(fx.raf);fx.hud&&fx.hud.remove();fx.hud=null;removeEventListener("pointermove",fx.onMove);removeEventListener("resize",fx.onResize)}
+/* sfondo hero: bokeh cinematografico che ogni tanto va a fuoco, light leak arancione e grana di pellicola.
+   Nessun cursore: si muove da solo (e con un leggero parallasse al tocco/scroll). Il titolo resta fermo e nitido.
+   Impostazioni: window.AM_FX = {bokeh, leak, grain, flare} */
+const fx={raf:0,hud:null,cv:null,gr:null,onMove:null,onResize:null};
+function stopFX(){cancelAnimationFrame(fx.raf);["hud","cv","gr"].forEach(k=>{fx[k]&&fx[k].remove();fx[k]=null});removeEventListener("pointermove",fx.onMove);removeEventListener("resize",fx.onResize)}
 function startFX(){
  if(reduce)return;
+ const O=Object.assign({bokeh:true,leak:true,grain:true,flare:false},window.AM_FX||{});
  const hud=document.createElement("div");hud.id="hud";hud.setAttribute("aria-hidden","true");
- hud.innerHTML='<i class="v" style="left:33.333%"></i><i class="v" style="left:66.666%"></i><i class="hh" style="top:33.333%"></i><i class="hh" style="top:66.666%"></i><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><div class="rec"><b></b>REC <span id="tc">00:00:00:00</span></div><div class="fps">25 FPS · 1/50</div><div id="fb"><i></i><i></i><i></i><i></i><span id="fl"></span></div>';
- document.body.append(hud);fx.hud=hud;
- const fb=hud.querySelector("#fb"),fl=hud.querySelector("#fl"),tc=hud.querySelector("#tc"),ttl=document.querySelector(".ttl");
- let W=innerWidth,H=innerHeight,tx=W*.6,ty=H*.4,px=tx,py=ty,moved=false;const t0=performance.now(),pad=n=>String(n).padStart(2,"0");
- fx.onResize=()=>{W=innerWidth;H=innerHeight};fx.onMove=e=>{moved=true;tx=e.clientX;ty=e.clientY};
- addEventListener("resize",fx.onResize);addEventListener("pointermove",fx.onMove,{passive:true});
+ hud.innerHTML='<i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>';
+ const cv=document.createElement("canvas");cv.id="bg";cv.setAttribute("aria-hidden","true");
+ document.body.prepend(cv);document.body.append(hud);fx.hud=hud;fx.cv=cv;
+ if(O.grain){const n=document.createElement("canvas");n.width=n.height=160;const g=n.getContext("2d"),im=g.createImageData(160,160);
+  for(let i=0;i<im.data.length;i+=4){const v=Math.random()*255;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=255}
+  g.putImageData(im,0,0);const gr=document.createElement("div");gr.id="grain";gr.setAttribute("aria-hidden","true");gr.style.backgroundImage=`url(${n.toDataURL()})`;document.body.prepend(gr);fx.gr=gr}
+ const ctx=cv.getContext("2d");
+ let W,H,dpr,ox=0,oy=0,tox=0,toy=0;const t0=performance.now();
+ const small=()=>innerWidth<700,rnd=(a,b)=>a+Math.random()*(b-a);
+ let bk=[];
+ function size(){dpr=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+"px";cv.style.height=H+"px";
+  const N=small()?9:15;bk=Array.from({length:N},(_,i)=>({x:rnd(0,W),y:rnd(0,H),r:rnd(small()?26:38,small()?80:120),vx:rnd(-.1,.1),vy:rnd(-.06,.06),z:rnd(.3,1),
+   c:i%3===0?[255,106,19]:[236,236,234],a:rnd(.08,.17),f:0,ph:rnd(0,6.28)}))}
+ fx.onResize=size;size();addEventListener("resize",size);
+ fx.onMove=e=>{tox=(e.clientX/W-.5)*-30;toy=(e.clientY/H-.5)*-30};addEventListener("pointermove",fx.onMove,{passive:true});
+ let nextF=1500,fi=-1,fT=0,nextFlare=2500,fl=null;
+ function disc(b,px,py){ // f=0 sfocato (morbido) · f=1 a fuoco (bordo netto)
+  const s=.25+b.f*.7,[r,g,bl]=b.c,a=b.a*(.7+b.f*1.3),rad=b.r*(1-b.f*.12);
+  const gd=ctx.createRadialGradient(px,py,0,px,py,rad);
+  gd.addColorStop(0,`rgba(${r},${g},${bl},${a*.55})`);gd.addColorStop(s,`rgba(${r},${g},${bl},${a})`);
+  gd.addColorStop(Math.min(s+.07,.99),`rgba(${r},${g},${bl},${a*(1+b.f*.8)})`);gd.addColorStop(1,`rgba(${r},${g},${bl},0)`);
+  ctx.fillStyle=gd;ctx.beginPath();ctx.arc(px,py,rad,0,6.283);ctx.fill()}
  function frame(now){
-  const t=now-t0,p=Math.min(Math.max(scrollY/(H*.8),0),1),rc=ttl.getBoundingClientRect();
-  if(!moved){tx=W*(.5+.28*Math.sin(t*.0005));ty=rc.top+rc.height*(.5+.3*Math.sin(t*.0008+1))}
-  const dx=tx-px,dy=ty-py;px+=dx*.08;py+=dy*.08;const sp=Math.hypot(dx,dy);
-  ttl.style.setProperty("--mx",(px-rc.left)+"px");ttl.style.setProperty("--my",(py-rc.top)+"px");
-  ttl.style.setProperty("--r",((W<700?120:180)+p*1500)+"px");ttl.style.setProperty("--b",(12*(1-p))+"px");
-  const o=Math.max(0,1-p*1.25);hud.style.opacity=o;hud.style.visibility=o?"visible":"hidden";
-  const lock=sp<4;
-  fb.style.transform=`translate(${px-36}px,${py-36}px) scale(${1+Math.min(sp/260,.45)})`;fb.classList.toggle("lock",lock);
-  fl.textContent=(lock?"LOCK ":"AF ")+(.4+py/H*4.6).toFixed(1)+"M";
-  const fr=Math.floor(t/40),sec=Math.floor(fr/25);
-  tc.textContent=`00:${pad(Math.floor(sec/60)%60)}:${pad(sec%60)}:${pad(fr%25)}`;
+  const t=now-t0,p=Math.min(Math.max(scrollY/(H*.9),0),1);
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation="lighter";
+  ox+=(tox-ox)*.05;oy+=(toy-oy)*.05;
+  if(O.leak){ // light leak: macchia calda che scivola piano
+   const lx=W*(.5+.38*Math.sin(t*.00021)),ly=H*(.35+.25*Math.sin(t*.00033+1)),lr=Math.max(W,H)*.6;
+   let gd=ctx.createRadialGradient(lx,ly,0,lx,ly,lr);gd.addColorStop(0,"rgba(255,106,19,.16)");gd.addColorStop(.5,"rgba(255,70,0,.05)");gd.addColorStop(1,"rgba(255,70,0,0)");
+   ctx.fillStyle=gd;ctx.fillRect(0,0,W,H);
+   const mx=W*(.2+.3*Math.cos(t*.00017)),my=H*(.85-.2*Math.sin(t*.00025));gd=ctx.createRadialGradient(mx,my,0,mx,my,lr*.55);
+   gd.addColorStop(0,"rgba(255,170,90,.08)");gd.addColorStop(1,"rgba(255,170,90,0)");ctx.fillStyle=gd;ctx.fillRect(0,0,W,H)}
+  if(O.bokeh){ // rack focus: ogni tanto un disco va a fuoco e poi si risfoca
+   if(t>nextF&&fi<0){fi=Math.random()*bk.length|0;fT=t;nextF=t+rnd(2600,4200)}
+   bk.forEach((b,i)=>{
+    b.x+=b.vx*b.z;b.y+=b.vy*b.z;if(b.x<-b.r)b.x=W+b.r;if(b.x>W+b.r)b.x=-b.r;if(b.y<-b.r)b.y=H+b.r;if(b.y>H+b.r)b.y=-b.r;
+    let f=0;if(i===fi){const k=(t-fT)/2200;if(k>=1)fi=-1;else f=Math.sin(Math.PI*k)**2}b.f+=(f-b.f)*.2;
+    const br=.85+.15*Math.sin(t*.0008+b.ph);const o=b.a;b.a=o*br;
+    disc(b,b.x+ox*b.z,b.y+oy*b.z-scrollY*.18*b.z);b.a=o})}
+  if(O.flare){ // flare anamorfico: striscia orizzontale che attraversa lo schermo
+   if(!fl&&t>nextFlare){fl={t:t,y:H*rnd(.22,.6)};nextFlare=t+rnd(5500,8000)}
+   if(fl){const k=(t-fl.t)/1700;if(k>=1)fl=null;else{
+    const e=k*k*(3-2*k),x=-W*.2+e*W*1.4,al=Math.sin(Math.PI*k)**1.5;
+    ctx.save();ctx.translate(x,fl.y);ctx.scale(1,.012);
+    let gd=ctx.createRadialGradient(0,0,0,0,0,W*.45);gd.addColorStop(0,`rgba(255,235,210,${.95*al})`);gd.addColorStop(.12,`rgba(255,120,30,${.55*al})`);gd.addColorStop(.5,`rgba(255,90,10,${.12*al})`);gd.addColorStop(1,"rgba(255,90,10,0)");
+    ctx.fillStyle=gd;ctx.fillRect(-W*.45,-W*.45,W*.9,W*.9);ctx.restore();
+    ctx.save();ctx.translate(x,fl.y);const g2=ctx.createRadialGradient(0,0,0,0,0,34);g2.addColorStop(0,`rgba(255,240,225,${.5*al})`);g2.addColorStop(1,"rgba(255,106,19,0)");ctx.fillStyle=g2;ctx.fillRect(-34,-34,68,68);ctx.restore()}}}
+  ctx.globalCompositeOperation="source-over";
+  const o=Math.max(0,1-p*1.25);hud.style.opacity=o;hud.style.visibility=o?"visible":"hidden";cv.style.opacity=1-.7*p;
   fx.raf=requestAnimationFrame(frame);
  }
  fx.raf=requestAnimationFrame(frame);
 }
 function scramble(el){
  if(reduce)return;
- el.querySelectorAll("h1 [data-t]").forEach(n=>{const t=n.dataset.t,tn=n.firstChild;let i=0;const ch="ABCDEFGHIJKLMNOPQRSTUVWXYZ#/<>";
-  const id=setInterval(()=>{tn.nodeValue=t.split("").map((c,k)=>c===" "||k<i?c:ch[Math.random()*ch.length|0]).join("");if(i++>=t.length){tn.nodeValue=t;clearInterval(id)}},60)});
+ el.querySelectorAll("h1 [data-t]").forEach(n=>{if(n.busy)return;n.busy=true;const t=n.dataset.t,tn=n.firstChild;let i=0;const ch="ABCDEFGHIJKLMNOPQRSTUVWXYZ#/<>";
+  const id=setInterval(()=>{tn.nodeValue=t.split("").map((c,k)=>c===" "||k<i?c:ch[Math.random()*ch.length|0]).join("");if(i++>=t.length){tn.nodeValue=t;n.busy=false;clearInterval(id)}},60)});
 }
+/* al passaggio del mouse sul nome si ripete l'animazione d'ingresso (solo desktop) */
+document.addEventListener("pointerover",e=>{if(e.pointerType==="touch")return;const h=e.target.closest?.(".hero h1");if(h&&!h.contains(e.relatedTarget))scramble(h.parentNode)});
 
 document.addEventListener("mousemove",e=>{
  const d=e.target.closest?.(".door");if(d){const r=d.getBoundingClientRect();d.style.setProperty("--mx",e.clientX-r.left+"px");d.style.setProperty("--my",e.clientY-r.top+"px")}
@@ -296,6 +372,27 @@ document.addEventListener("mousemove",e=>{
 });
 document.addEventListener("mouseover",e=>{const v=e.target.closest?.(".card")?.querySelector("video");if(v)v.play().catch(()=>{})});
 document.addEventListener("mouseout",e=>{const v=e.target.closest?.(".card")?.querySelector("video");if(v){v.pause();v.currentTime=0}});
+
+/* puntatore personalizzato: bokeh che lampeggia; in movimento si ingrandisce e vira all'arancione; al click scatta e diventa arancione pieno */
+(function(){
+ if(reduce||!matchMedia("(hover:hover) and (pointer:fine)").matches)return;
+ const cur=document.createElement("div");cur.id="cur";cur.setAttribute("aria-hidden","true");cur.innerHTML='<div class="i"></div>';document.body.append(cur);
+ const dot=cur.firstChild;document.documentElement.classList.add("cc");
+ let x=-50,y=-50,tx=x,ty=y,k=0,sc=1,seen=false,down=false;const W=[236,236,234],O=[255,106,19];
+ addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;tx=e.clientX;ty=e.clientY;if(!seen){seen=true;x=tx;y=ty;cur.classList.add("on")}},{passive:true});
+ document.addEventListener("mouseleave",()=>cur.classList.remove("on"));document.addEventListener("mouseenter",()=>seen&&cur.classList.add("on"));
+ addEventListener("pointerdown",e=>{if(e.pointerType==="touch")return;down=true;cur.classList.add("dn");
+  const r=document.createElement("div");r.className="rip";r.style.left=e.clientX+"px";r.style.top=e.clientY+"px";document.body.append(r);setTimeout(()=>r.remove(),650)});
+ addEventListener("pointerup",()=>{down=false;cur.classList.remove("dn")});
+ (function f(){
+  const dx=tx-x,dy=ty-y;x+=dx*.28;y+=dy*.28;const sp=Math.hypot(dx,dy);
+  const hov=document.elementFromPoint(tx,ty)?.closest?.("a,button,select,.card,.door,.chip")?1:0;
+  const tk=Math.min(1,sp/18+hov*.55),ts=down?.75:1+Math.min(sp/60,.7)+hov*.35;
+  k+=(tk-k)*(tk>k?.2:.05);sc+=(ts-sc)*.18; // sale in fretta, torna al bianco piano
+  const c=W.map((v,i)=>Math.round(v+(O[i]-v)*k)).join(",");
+  cur.style.transform=`translate(${x}px,${y}px) scale(${sc.toFixed(3)})`;dot.style.setProperty("--c",c);
+  requestAnimationFrame(f)})();
+})();
 
 function setLang(l){lang=l;store.set("am_lang",l);route()}
 document.addEventListener("click",e=>{const b=e.target.closest(".vw button");if(!b)return;S.view=b.dataset.v;store.set("am_view",S.view);
@@ -309,7 +406,8 @@ function route(){
  document.querySelectorAll(".lg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
  const h=location.hash.replace(/^#\/?/,"");
  let r="home",work=null;
- if(h==="filmmaker"||h==="camera")r=h;
+ let cp=null;const am=h.match(/^(filmmaker|camera)(?:\/(.+))?$/);
+ if(am){r=am[1];if(am[2]){const c=decodeURIComponent(am[2]);if((D.categories[r]||[]).includes(c))cp=c}}
  else if(h==="contatti")r="contatti";
  else if(h.startsWith("work/")){work=D.works.find(w=>w.id===decodeURIComponent(h.slice(5)));if(work)r="work"}
  document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.r===r||(r==="work"&&a.dataset.r===work.area)));
@@ -317,10 +415,12 @@ function route(){
  if(r==="work"){app.innerHTML=workPage(work);scrollTo(0,0);document.title=work.title+" – Alessio Melia";return}
  document.title="Alessio Melia – Filmmaker & Camera Department";
  if(r==="filmmaker"||r==="camera"){
-  if(!document.getElementById("g"))S.c="Tutti";
+  if(!document.getElementById("g")){S.c="Tutti";S.g="Tutti"}
+  if(cp)S.c=cp;
   app.innerHTML=area(r);fill(r);scrollTo(0,0);
   document.getElementById("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;S.c=b.dataset.c;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===b));fill(r)};
   document.getElementById("sort").onchange=e=>{S.sort=e.target.value;fill(r)};
+  const gc=document.getElementById("gchips");if(gc)gc.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;S.g=b.dataset.g;gc.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===b));fill(r)};
  }else{
   app.innerHTML=home();
   startFX();
@@ -330,7 +430,12 @@ function route(){
 }
 fetch("data.json?"+Date.now()).then(r=>r.json()).then(j=>{
  D=j;D.works.forEach(w=>{w.id=w.id||String(w.title||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")});
- addEventListener("hashchange",()=>{S.c="Tutti";route()});route()})
+ /* un lavoro Filmmaker con "cam" compare anche nel Camera Department: stessi link e miniatura, con titolo/attrezzatura/note propri */
+ const RL={"Camera Operator":{it:"Operatore di camera",en:"Camera Operator"},"1AC":{it:"1° assistente camera",en:"1st Assistant Camera"},"2AC":{it:"2° assistente camera",en:"2nd Assistant Camera"}};
+ const has=v=>v&&(typeof v==="string"?v:(v.it||v.en));
+ D.works.filter(w=>w.cam&&w.cam.cat).forEach(w=>{const c=w.cam;
+  D.works.push({...w,id:w.id+"-cam",area:"camera",cat:c.cat,title:c.title||w.title,gear:c.gear||w.gear,desc:has(c.desc)?c.desc:w.desc,role:RL[c.cat]||w.role,best:false,cam:null})});
+ addEventListener("hashchange",()=>{S.c="Tutti";S.g="Tutti";route()});route()})
  .catch(()=>app.innerHTML='<p style="padding:10vh 5vw">Impossibile caricare data.json. Se hai aperto il file dal computer, avvia un piccolo server locale (vedi README) oppure pubblica il sito.</p>');
 </script>
 </body>

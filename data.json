@@ -28,71 +28,460 @@
       "Music Videos"
     ],
     "camera": [
+      "Camera Operator",
       "1AC",
       "2AC"
     ]
   },
   "clients": [
-    "Salone del Mobile",
     "Quattroruote",
-    "Mercedes",
-    "Artist First",
-    "Disney Plus",
-    "Enel Italia",
-    "Giro d'Italia"
+    "Fendi",
+    "Brunello Cucinelli",
+    "ENEL",
+    "Elica",
+    "adidas",
+    "ING",
+    "Disney+",
+    "Giro d'Italia",
+    "Rinascente",
+    "Radio TV Serie A",
+    "Casa Brera",
+    "Dermaland"
   ],
   "works": [
     {
-      "id": "concerto-esempio",
+      "id": "shablo-manifesto-aftermovie",
       "area": "filmmaker",
       "cat": "Concerts",
-      "title": "Titolo concerto",
-      "client": "Cliente",
-      "year": "2026",
+      "title": "Shablo - Manifesto | aftermovie",
+      "client": "Shablo",
+      "year": "",
       "role": {
-        "it": "Riprese",
+        "it": "Operatore di camera",
         "en": "Camera Op."
       },
-      "gear": "Camera, ottiche, supporti",
+      "gear": "Sony FX3, zoom vintage",
       "desc": {
-        "it": "Qui racconti il backstage: com'è nato il progetto, che attrezzatura hai usato, le difficoltà sul set.",
-        "en": "Tell the backstage story here: how the project started, the gear you used, the challenges on set."
+        "it": "",
+        "en": ""
       },
-      "url": "https://www.instagram.com/p/DI_HLY5NLfY/",
+      "url": "",
       "thumb": "",
       "preview": "",
-      "best": true
+      "best": true,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Shablo - Manifesto | Live Teatro degli Arcimboldi",
+        "gear": "Sony FX3 with vintage zoom lens",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
     },
     {
-      "id": "sport-esempio",
+      "id": "gabbani-forum-d-assago-2024",
+      "area": "filmmaker",
+      "cat": "Concerts",
+      "title": "Gabbani - Forum d'Assago 2024",
+      "client": "Francesco Gabbani",
+      "year": "2024",
+      "role": {
+        "it": "Co-operatore di camera",
+        "en": "Co-Camera Op."
+      },
+      "gear": "FX6",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "",
+        "gear": "co-Camera Op. | FX6",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "dedalus-project-mind-house-palermo",
+      "area": "filmmaker",
+      "cat": "Concerts",
+      "title": "Dedalus Project - Mind House, Palermo",
+      "client": "Dedalus Project",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "A7IV",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "",
+        "gear": "A7IV",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "dedalus-project-mind-house-palermo-live-band",
+      "area": "filmmaker",
+      "cat": "Concerts",
+      "title": "Dedalus Project - Mind House, Palermo (live band)",
+      "client": "Dedalus Project",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "not-another-prayer-mind-house-palermo",
+      "area": "filmmaker",
+      "cat": "Concerts",
+      "title": "Not Another Prayer - Mind House, Palermo",
+      "client": "Not Another Prayer",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "we-are-deathcore-defamed",
+      "area": "filmmaker",
+      "cat": "Concerts",
+      "title": "We Are Deathcore - Defamed",
+      "client": "We Are Deathcore",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "Sony a6300 + prism",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "We Are Deathcore",
+        "gear": "Sony a6300 + prism",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "floydian-echoes",
+      "area": "filmmaker",
+      "cat": "Concerts",
+      "title": "Floydian Echoes",
+      "client": "Floydian Echoes",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "Sony a6300 + prism",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "",
+        "gear": "Sony a6300 + prism",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "giro-express",
       "area": "filmmaker",
       "cat": "Sport",
-      "title": "Titolo progetto sport",
-      "client": "Cliente",
+      "title": "Giro Express",
+      "client": "Giro d'Italia",
       "year": "2026",
       "role": {
-        "it": "Regia e montaggio",
-        "en": "Direction and editing"
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "Tutti i contenuti del Giro Express (link alla playlist YouTube).",
+        "en": "All the Giro Express content (YouTube playlist link)."
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "prod": ""
+    },
+    {
+      "id": "giro-express-women-giro-d-italia-2026",
+      "area": "filmmaker",
+      "cat": "Sport",
+      "title": "Giro Express Women - Giro d'Italia 2026",
+      "client": "Giro d'Italia Women",
+      "year": "2026",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "Contenuti del Giro Express Women (link alla playlist YouTube).",
+        "en": "Giro Express Women content (YouTube playlist link)."
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "prod": ""
+    },
+    {
+      "id": "imatra-with-giulio-pellizzari",
+      "area": "filmmaker",
+      "cat": "Sport",
+      "title": "Imatra with Giulio Pellizzari",
+      "client": "Imatra",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera e montaggio",
+        "en": "Camera Op. & Video Editor"
+      },
+      "gear": "",
+      "desc": {
+        "it": "Tre contenuti con Giulio Pellizzari: intervista, product show off ed expense management (link al raggruppamento su Instagram).",
+        "en": "Three pieces with Giulio Pellizzari: interview, product show off and expense management (Instagram collection link)."
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "storie-di-serie-a-nicol-zaniolo",
+      "area": "filmmaker",
+      "cat": "Sport",
+      "title": "Storie di Serie A - Nicolò Zaniolo",
+      "client": "Radio TV Serie A",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "Sony A7IV",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Storie di Serie A - Nicolò Zaniolo",
+        "gear": "Sony A7IV",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "painkillers-baviera",
+      "area": "filmmaker",
+      "cat": "Sport",
+      "title": "Painkillers - Baviera",
+      "client": "Painkillers",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera e montaggio",
+        "en": "Camera Op. & Video Editor"
       },
       "gear": "",
       "desc": {
         "it": "",
         "en": ""
       },
-      "url": "https://www.instagram.com/p/DdjlSdfOP6L/",
+      "url": "",
       "thumb": "",
       "preview": "",
-      "best": true
+      "best": false,
+      "prod": ""
     },
     {
-      "id": "automotive-esempio",
+      "id": "bellissimo-run-club-x-rinascente",
+      "area": "filmmaker",
+      "cat": "Sport",
+      "title": "Bellissimo Run Club x Rinascente",
+      "client": "Rinascente",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "quattroruote-70-f40-vs-miura-vs-pagani-utopia",
       "area": "filmmaker",
       "cat": "Automotive",
-      "title": "Titolo progetto automotive",
-      "client": "Cliente",
-      "year": "2026",
+      "title": "Quattroruote 70 | F40 Vs Miura Vs Pagani Utopia",
+      "client": "Quattroruote",
+      "year": "",
       "role": {
-        "it": "Riprese",
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "Sony FX6 (cavalletto), Sony FX3 (a mano)",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "F40 Vs Miura Vs Pagani Utopia - Quattroruote",
+        "gear": "FX6 and FX3 on tripod and handheld",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "quattroruote-70-ferrari-f40",
+      "area": "filmmaker",
+      "cat": "Automotive",
+      "title": "Quattroruote 70 | Ferrari F40",
+      "client": "Quattroruote",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera – contenuti digitali",
+        "en": "Camera Op. – digital content"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "quattroruote-linktour-alumi",
+      "area": "filmmaker",
+      "cat": "Automotive",
+      "title": "Quattroruote | Linktour Alumi",
+      "client": "Quattroruote",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "FX6 su cavalletto, FX3 su Ronin, Osmo Pocket",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Linktour Alumi - Quattroruote | Bearoll",
+        "gear": "FX6 on tripod, FX3 on Ronin, Osmo Pocket",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "ferrari-12cilindri-x-tubi-style-officina-vescovi",
+      "area": "filmmaker",
+      "cat": "Automotive",
+      "title": "Ferrari 12Cilindri x Tubi Style - Officina Vescovi",
+      "client": "Tubi Style",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
         "en": "Camera Op."
       },
       "gear": "",
@@ -100,52 +489,1502 @@
         "it": "",
         "en": ""
       },
-      "url": "https://www.youtube.com/watch?v=3FxGhg7AgPY",
+      "url": "",
       "thumb": "",
       "preview": "",
-      "best": true
+      "best": false,
+      "prod": ""
     },
     {
-      "id": "set-1ac-esempio",
+      "id": "tvs-rtx-300-presentazione",
+      "area": "filmmaker",
+      "cat": "Automotive",
+      "title": "TVS RTX 300 - presentazione",
+      "client": "TVS",
+      "year": "",
+      "role": {
+        "it": "Co-operatore di camera",
+        "en": "Co-Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "ruote-classiche-biocarburante-lancia-flaminia",
+      "area": "filmmaker",
+      "cat": "Automotive",
+      "title": "Ruote Classiche: Biocarburante - Lancia Flaminia",
+      "client": "Ruote Classiche",
+      "year": "",
+      "role": {
+        "it": "Co-operatore di camera",
+        "en": "Co-Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "elica-salone-del-mobile-2026",
+      "area": "filmmaker",
+      "cat": "Events",
+      "title": "Elica - Salone del Mobile 2026",
+      "client": "Elica",
+      "year": "2026",
+      "role": {
+        "it": "Operatore di camera e montaggio – contenuti digitali multipli",
+        "en": "Camera Op. & Video Editor – multiple digital contents"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "prod": ""
+    },
+    {
+      "id": "enel-italia-milano-cortina-2026",
+      "area": "filmmaker",
+      "cat": "Events",
+      "title": "ENEL Italia - Milano Cortina 2026",
+      "client": "ENEL",
+      "year": "2026",
+      "role": {
+        "it": "Operatore di camera e montaggio",
+        "en": "Camera Op. & Video Editor"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "adidas-the-ants",
+      "area": "filmmaker",
+      "cat": "Events",
+      "title": "Adidas - The Ants",
+      "client": "adidas",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "sg-company-convention-event",
+      "area": "filmmaker",
+      "cat": "Events",
+      "title": "SG Company - convention event",
+      "client": "SG Company",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera e montaggio",
+        "en": "Camera Op. & Video Editor"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "dermaland-2026-2027-social-contents",
+      "area": "filmmaker",
+      "cat": "Adv",
+      "title": "Dermaland | 2026 - 2027 social contents",
+      "client": "Dermaland",
+      "year": "2026",
+      "role": {
+        "it": "Montaggio",
+        "en": "Video Editor"
+      },
+      "gear": "",
+      "desc": {
+        "it": "Contenuti social 2026–2027 (link a tutti i video su Instagram).",
+        "en": "2026–2027 social contents (link to all the videos on Instagram)."
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "banca-ing",
+      "area": "filmmaker",
+      "cat": "Adv",
+      "title": "Banca ING",
+      "client": "ING",
+      "year": "",
+      "role": {
+        "it": "Shooting fotografico hero / corporate",
+        "en": "Hero / corporate photo shooting"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "kind": "photo",
+      "prod": ""
+    },
+    {
+      "id": "fx-s-the-bear-disney-plus-with-garofalo",
+      "area": "filmmaker",
+      "cat": "Adv",
+      "title": "FX's The Bear (Disney Plus) with Garofalo",
+      "client": "Disney+",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "spot for FX's The Bear (Disney Plus) with Garofalo",
+        "gear": "",
+        "desc": {
+          "it": "Co-operatore di camera",
+          "en": "co-Cam. Op."
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "outdoora-milanofashionweek-prosecco",
+      "area": "filmmaker",
+      "cat": "Adv",
+      "title": "Outdoora | MilanoFashionWeek & Prosecco",
+      "client": "Outdoora",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "flying-over-palermo-aeroclub-palermo",
+      "area": "filmmaker",
+      "cat": "Adv",
+      "title": "Flying Over Palermo - Aeroclub Palermo",
+      "client": "Aeroclub Palermo",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "Sony a6300",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Flying over Palermo - Aeroclub Palermo",
+        "gear": "Sony a6300",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "fendi-ss27-photo-call",
+      "area": "filmmaker",
+      "cat": "Fashion",
+      "title": "Fendi - SS27 - Photo Call",
+      "client": "Fendi",
+      "year": "2026",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "Sony FX6, Sony G-Master 24-70",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "prod": ""
+    },
+    {
+      "id": "brunello-cucinelli-winter-edit-how-we-style",
+      "area": "filmmaker",
+      "cat": "Fashion",
+      "title": "Brunello Cucinelli | Winter Edit - How We Style",
+      "client": "Brunello Cucinelli",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "Red V-Raptor 8K",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Brunello Cucinelli: Winter Edit - How we style",
+        "gear": "Red V-raptor 8K",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "casa-brera-the-luxury-collection",
+      "area": "filmmaker",
+      "cat": "Fashion",
+      "title": "Casa Brera - The Luxury Collection",
+      "client": "Casa Brera",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "materia-traces-milan-fashion-week",
+      "area": "filmmaker",
+      "cat": "Fashion",
+      "title": "Materia Traces - Milan Fashion Week",
+      "client": "Materia Traces",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "57-london-fw25",
+      "area": "filmmaker",
+      "cat": "Fashion",
+      "title": "57 London | FW25",
+      "client": "57 London",
+      "year": "2025",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "Canon R5C",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "57London | FW25",
+        "gear": "B-cam with Canon R5C",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "cagi",
+      "area": "filmmaker",
+      "cat": "Fashion",
+      "title": "Cagi",
+      "client": "Cagi",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Op."
+      },
+      "gear": "Canon C400",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Cagi - FW25",
+        "gear": "B-cam with Canon C400",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "dedalus-project-witness",
+      "area": "filmmaker",
+      "cat": "Music Videos",
+      "title": "Dedalus Project - Witness",
+      "client": "Dedalus Project",
+      "year": "",
+      "role": {
+        "it": "Filmmaker",
+        "en": "Filmmaker"
+      },
+      "gear": "Sony A7SIII",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": true,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "",
+        "gear": "Sony A7SIII",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "mecna-passione",
+      "area": "filmmaker",
+      "cat": "Music Videos",
+      "title": "Mecna - Passione",
+      "client": "Mecna",
+      "year": "",
+      "role": {
+        "it": "Operatore B-camera",
+        "en": "B-Camera Op."
+      },
+      "gear": "Sony FX3 su Ronin RS2, ottiche G-Master",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "",
+        "gear": "B-cam | Sony FX3 on Ronin RS2 with G-Master lenses",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "yahweh-turi-moncada-cattiva-pellerito-rmx",
+      "area": "filmmaker",
+      "cat": "Music Videos",
+      "title": "Yahweh, Turi Moncada - Cattiva (Pellerito RMX)",
+      "client": "Yahweh, Turi Moncada",
+      "year": "",
+      "role": {
+        "it": "Operatore camera VHS",
+        "en": "VHS Camera Op."
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "",
+        "gear": "",
+        "desc": {
+          "it": "VHS Camera Operator",
+          "en": "VHS Camera Operator"
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "not-another-prayer-broken-chains-reels",
+      "area": "filmmaker",
+      "cat": "Music Videos",
+      "title": "Not Another Prayer | Broken Chains - reels",
+      "client": "Not Another Prayer",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "daawidi-voci-di-strada-trailer",
+      "area": "filmmaker",
+      "cat": "Music Videos",
+      "title": "Daawidi - Voci di strada | trailer",
+      "client": "Daawidi",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "DOP/OP | A7IV",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "cam": {
+        "cat": "Camera Operator",
+        "title": "Daawidi - Voci di strada (EP trailer)",
+        "gear": "DOP/OP | A7IV",
+        "desc": {
+          "it": "",
+          "en": ""
+        }
+      },
+      "prod": ""
+    },
+    {
+      "id": "picciotto-global-sumud-flotilla",
+      "area": "filmmaker",
+      "cat": "Music Videos",
+      "title": "Picciotto - Global Sumud Flotilla",
+      "client": "Picciotto",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "cordusio",
+      "area": "filmmaker",
+      "cat": "Food & Beverage",
+      "title": "Cordusio",
+      "client": "Giardino Cordusio",
+      "year": "",
+      "role": {
+        "it": "Videomaker",
+        "en": "Videomaker"
+      },
+      "gear": "",
+      "desc": {
+        "it": "Brunch event, video e contenuti per Giardino Cordusio (link ai post su Instagram).",
+        "en": "Brunch event, videos and content for Giardino Cordusio (Instagram posts link)."
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": "Cultivar"
+    },
+    {
+      "id": "knam-m-m-s",
+      "area": "filmmaker",
+      "cat": "Food & Beverage",
+      "title": "Knam - M&M's",
+      "client": "Knam",
+      "year": "",
+      "role": {
+        "it": "Montaggio",
+        "en": "Video Editor"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "daniele-resconi-churros",
+      "area": "filmmaker",
+      "cat": "Food & Beverage",
+      "title": "Daniele Resconi - Churros",
+      "client": "Daniele Resconi",
+      "year": "",
+      "role": {
+        "it": "Montaggio",
+        "en": "Video Editor"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "food-beverage",
+      "area": "filmmaker",
+      "cat": "Food & Beverage",
+      "title": "Food & Beverage",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "Portfolio fotografico",
+        "en": "Photo portfolio"
+      },
+      "gear": "",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "kind": "photo",
+      "prod": ""
+    },
+    {
+      "id": "imatra-with-giulio-pellizzari-interview",
+      "area": "camera",
+      "cat": "Camera Operator",
+      "title": "Imatra with Giulio Pellizzari - interview",
+      "client": "Imatra",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Operator"
+      },
+      "gear": "A7IV",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "storie-di-serie-a-giovanni-simeone",
+      "area": "camera",
+      "cat": "Camera Operator",
+      "title": "Storie di Serie A - Giovanni Simeone",
+      "client": "Radio TV Serie A",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Operator"
+      },
+      "gear": "Sony A7IV",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "il-ghost-albania-commando",
+      "area": "camera",
+      "cat": "Camera Operator",
+      "title": "Il Ghost - Albania Commando",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Operator"
+      },
+      "gear": "2nd day | A7SIII with G-Master lenses",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "animale-da-compagnia-video-compagna-crowdfunding",
+      "area": "camera",
+      "cat": "Camera Operator",
+      "title": "Animale Da Compagnia - video compagna crowdfunding",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "Operatore di camera",
+        "en": "Camera Operator"
+      },
+      "gear": "B-cam | A7IV",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "aperitivo-dinamico-short-commerciale-for-luxardo",
       "area": "camera",
       "cat": "1AC",
-      "title": "Titolo set 1AC",
-      "client": "Produzione",
+      "title": "Aperitivo Dinamico - short commerciale for Luxardo",
+      "client": "Luxardo",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Shot with mixed hi-speed Pixboom and Red Vraptor Xe, paired with NiSi Aureus lenses",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "joan-thiele-tour-2026-santeria-toscana-31",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Joan Thiele - Tour 2026 - Santeria Toscana 31",
+      "client": "Joan Thiele",
       "year": "2026",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Alexa mini LF",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "oroblu-ss26",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "OroBlu SS26",
+      "client": "OroBlu",
+      "year": "2026",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Canon R5C",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "stunt-pilots-big-mouth",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Stunt Pilots - Big Mouth",
+      "client": "Stunt Pilots",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo X with Laowa 24 Macro Probe, Tokina 11-20 cine, DZO 32 macro T2.8",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "laflare-couture-2k25-summer-collection",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "LaFlare Couture - 2K25 Summer Collection",
+      "client": "LaFlare Couture",
+      "year": "2025",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "ARRI Alexa Mini, ARRI Signature primes",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "as-young-as-jazz-valdobbiedene-jazz",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "As Young as Jazz ! | Valdobbiedene Jazz",
+      "client": "Valdobbiedene Jazz",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "(focus & zoom) Sony FX6 with DZO 20-55 and 55-125, Canon CN Prime",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "ace-eroi-del-pulito",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "ACE | Eroi del pulito",
+      "client": "ACE",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Pixis 12K",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "findus-italia-one-piece-limited-edition-box",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Findus Italia - One Piece Limited Edition Box",
+      "client": "Findus Italia",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo X",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "tv-off",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "TV OFF",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "x2 Blackmagic Pixis 6K",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "blast-zero-scuse",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Blast - Zero Scuse",
+      "client": "Blast",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Alexa mini with Atlas lenses",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "fatra-spot-documentary",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "FATRA - spot / documentary",
+      "client": "FATRA",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Canon R5C",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "una-scena",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Una Scena",
+      "client": "",
+      "year": "",
       "role": {
         "it": "1° assistente camera",
         "en": "1st Assistant Camera"
       },
       "gear": "",
       "desc": {
+        "it": "Cortometraggio di Andrea Vailati - Arte Settima",
+        "en": "Shortfilm by Andrea Vailati - Arte Settima"
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": "Arte Settima"
+    },
+    {
+      "id": "natale-criminale-akita-prod",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Natale Criminale | Akita prod.",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Blackmagic Ursa mini G2",
+      "desc": {
+        "it": "Trailer",
+        "en": "Trailer"
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": "Akita prod."
+    },
+    {
+      "id": "twentysix-enterprise-aureola-dandy",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "TwentySix Enterprise - AUREOLA, Dandy",
+      "client": "TwentySix Enterprise",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo X with DZO Zoom",
+      "desc": {
         "it": "",
         "en": ""
       },
-      "url": "https://www.instagram.com/reels/DZH30gHqWvq/",
+      "url": "",
       "thumb": "",
       "preview": "",
-      "best": true
+      "best": false,
+      "prod": ""
     },
     {
-      "id": "set-2ac-esempio",
+      "id": "francesco-gabbani-cos-come-mi-viene",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Francesco Gabbani - Così come mi viene",
+      "client": "Francesco Gabbani",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo 6K, DZO Vespid kit, Laowa 12 T2.9",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "solo-ragazzi-ied-shortfilm",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Solo Ragazzi - IED shortfilm",
+      "client": "IED",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Sony FX6",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "gojardi-gurl-colpa-tua",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Gojardi - GURL (Colpa tua)",
+      "client": "Gojardi",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "FX3",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "curatolo-arini-1875",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Curatolo Arini 1875",
+      "client": "Curatolo Arini",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "",
+      "desc": {
+        "it": "Documentary reels",
+        "en": "Documentary reels"
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "dolly-noire-denari-with-marza",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Dolly Noire - Denari (with Marza)",
+      "client": "Dolly Noire",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo with Canon FD",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "miriam-fashion-film",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Miriam | fashion film",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Blackmagic Design URSA Mini Pro 4.6K G2",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "22simba-my-shine",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "22Simba - My Shine",
+      "client": "22Simba",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo X with Canon FD lenses and Ronin 2",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "zani-dentro-le-storie-degli-altri-sprazzi-di-me",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "ZANI - Dentro le storie degli altri, sprazzi di me",
+      "client": "ZANI",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "BMPCC 6K PRO",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "stunt-pilots-bad-jet",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Stunt Pilots - Bad Jet",
+      "client": "Stunt Pilots",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "(focus & zoom) Red Komodo X with Tokina 11-20 cine, DZO 32 macro T2.8",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "terra-e-silenzio-shortfilm",
+      "area": "camera",
+      "cat": "1AC",
+      "title": "Terra e Silenzio | shortfilm",
+      "client": "",
+      "year": "",
+      "role": {
+        "it": "1° assistente camera",
+        "en": "1st Assistant Camera"
+      },
+      "gear": "Red Komodo",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "evissimax-xxx",
       "area": "camera",
       "cat": "2AC",
-      "title": "Titolo set 2AC",
-      "client": "Produzione",
-      "year": "2025",
+      "title": "Evissimax - XXX",
+      "client": "Evissimax",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "Arri Alexa mini",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "ronin",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "Ronin",
+      "client": "Ronin",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "Arri Alexa",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "nexus-giuglia",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "NEXUS | Giuglia.",
+      "client": "NEXUS",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "Pixis 12K",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "ethan-desgra-ado",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "Ethan - DESGRAÇADO",
+      "client": "Ethan",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "Arri Alexa mini LF",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "morbidelli",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "Morbidelli",
+      "client": "Morbidelli",
+      "year": "",
       "role": {
         "it": "2° assistente camera",
         "en": "2nd Assistant Camera"
       },
       "gear": "",
       "desc": {
+        "it": "Spot commerciale",
+        "en": "Commercial"
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "echoes-of-nature-crivelli-mia-le-journal",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "Echoes Of Nature - Crivelli / Mia Le Journal",
+      "client": "Crivelli / Mia Le Journal",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "",
+      "desc": {
+        "it": "Fashion",
+        "en": "Fashion"
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "a-dream-by-chimera",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "A dream by Chimera",
+      "client": "Chimera",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "Red Komodo, Freefly Ember, FX3",
+      "desc": {
         "it": "",
         "en": ""
       },
-      "url": "https://www.youtube.com/watch?v=WQNQ4H6Y6E8",
+      "url": "",
       "thumb": "",
       "preview": "",
-      "best": false
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "capoplaza-caramello",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "Capoplaza - Caramello",
+      "client": "Capoplaza",
+      "year": "",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "Red Dragon X 5K",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
+    },
+    {
+      "id": "promoflash-max-giusti-2025-ameconviene-it",
+      "area": "camera",
+      "cat": "2AC",
+      "title": "Promoflash Max Giusti 2025 - Ameconviene.it",
+      "client": "Ameconviene.it",
+      "year": "2025",
+      "role": {
+        "it": "2° assistente camera",
+        "en": "2nd Assistant Camera"
+      },
+      "gear": "x2 Canon cine cameras",
+      "desc": {
+        "it": "",
+        "en": ""
+      },
+      "url": "",
+      "thumb": "",
+      "preview": "",
+      "best": false,
+      "prod": ""
     }
   ]
 }
