@@ -120,7 +120,7 @@ main,footer{position:relative;z-index:1}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start}
 .about p{color:var(--text);max-width:56ch;margin:0;font-size:clamp(17px,2vw,21px)}
 .contact{padding:12vh 5vw 8vh;background:var(--bg)}
-.contact a.big{display:block;font-size:clamp(34px,8vw,120px);margin-bottom:26px;overflow-wrap:anywhere;transition:color .2s}
+.contact a.big{display:block;font-size:clamp(14px,4.8vw,84px);margin-bottom:26px;overflow-wrap:anywhere;transition:color .2s}
 .contact a.big:hover{color:var(--acc)}
 .soc{display:flex;gap:22px;flex-wrap:wrap;color:var(--mute)}
 .soc a:hover{color:var(--text)}
@@ -206,7 +206,7 @@ const card=(w,i)=>{
 const viewToggle=()=>`<div class="vw" role="group" aria-label="${T("view")}"><span>${T("view")}</span><button data-v="cp" aria-pressed="${S.view==="cp"}">${T("v_cp")}</button><button data-v="wide" aria-pressed="${S.view==="wide"}">${T("v_wide")}</button></div>`;
 const contact=()=>`<section class="contact" id="contatti"><h3 class="d">${T("together")}</h3>
  <a class="big d" href="mailto:${esc(D.site.email)}">${esc(D.site.email)}</a>
- <div class="soc"><a href="${esc(D.site.instagram)}" target="_blank" rel="noopener">Instagram</a><a href="${esc(D.site.behance)}" target="_blank" rel="noopener">Behance</a></div></section>`;
+ <div class="soc"><a href="${esc(D.site.instagram)}" target="_blank" rel="noopener">Instagram</a></div></section>`;
 const clients=()=>{const it=D.clients.map(c=>typeof c==="string"?`<span class="d">${esc(c)}</span>`:`<img src="${esc(c.logo)}" alt="${esc(c.name)}">`).join("<i>●</i>");return `<div class="marq" aria-label="${T("clientsLbl")}"><div>${it}<i>●</i>${it}<i>●</i></div></div>`};
 
 function home(){

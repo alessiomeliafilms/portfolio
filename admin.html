@@ -131,7 +131,7 @@ function renderSettings(){
    <div class="row">${bi("Riga sotto il nome (es. Milano · IT — Worldwide)","data-sl","location",s.location,false)}</div>
    <div class="row">${bi("Frase in homepage","data-sl","tagline",s.tagline,true)}</div>
    <div class="row">${bi("Chi sono","data-sl","bio",s.bio,true)}</div>
-   <div class="row"><label>Instagram (URL)<input data-s="instagram" value="${esc(s.instagram)}"></label><label>Behance (URL)<input data-s="behance" value="${esc(s.behance)}"></label></div>
+   <label>Instagram (URL)<input data-s="instagram" value="${esc(s.instagram)}"></label>
    <div class="row"><label>Categorie Filmmaker (separate da virgola)<input id="c_f" value="${esc(D.categories.filmmaker.join(", "))}"></label>
    <label>Categorie Camera Dept (separate da virgola)<input id="c_c" value="${esc(D.categories.camera.join(", "))}"></label></div>
    <label>Clienti (uno per riga: Nome oppure Nome | img/logo.png)<textarea id="cli">${esc(D.clients.map(c=>typeof c==="string"?c:c.name+" | "+c.logo).join("\n"))}</textarea></label></div></div>`;

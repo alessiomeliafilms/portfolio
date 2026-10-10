@@ -14,8 +14,7 @@
       "en": "I'm Alessio - filmmaker, video operator and camera assistant based in Milan, Italy. I tell stories in motion, from the stage to the track to the set."
     },
     "email": "alessiomeliafilms@gmail.com",
-    "instagram": "https://www.instagram.com/alessiomeliafilms/",
-    "behance": "https://www.behance.net/"
+    "instagram": "https://www.instagram.com/alessiomeliafilms/"
   },
   "categories": {
     "filmmaker": [
@@ -34,11 +33,12 @@
     ]
   },
   "clients": [
-    "Salone del Mobile",
-    "Mercedes",
-    "Quattroruote",
-    "Artist First",
-    "Giro d'Italia"
+    "Cliente 1",
+    "Cliente 2",
+    "Cliente 3",
+    "Cliente 4",
+    "Cliente 5",
+    "Cliente 6"
   ],
   "works": [
     {
